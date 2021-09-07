@@ -64,6 +64,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-解题部分工具总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2021-09-07T07:38:28.000Z" itemprop="datePublished">2021-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/">解题部分工具总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>工具：</p>
+<p>（1）与佛论禅：<a target="_blank" rel="noopener" href="http://www.keyfc.net/bbs/tools/tudoucode.aspx">http://www.keyfc.net/bbs/tools/tudoucode.aspx</a>  </p>
+<p>出现禅语时使用，其中”普度众生”为网站的使用说明</p>
+<p>（2）rot-13：<a target="_blank" rel="noopener" href="https://rot13.com/">https://rot13.com/</a></p>
+<p>rot-13使用替换加密算法，使用后所有英文字母由后13位字母代替，是凯撒密码加密演算法的特例。</p>
+<p>故加密后只有字母受到影响，数字、符号、空格等所有其他形式的字符都不变。</p>
+<p>A B  C D E F G H  I   J  K L M</p>
+<p>N O P Q R S T  U V W X Y  Z</p>
+<p>因有26个英文字母，并且26=2×13，故rot13函数是它自己的逆反。</p>
+<p>（3）Base64：打开”在线工具”，选’’极客类’’，点击’’文字加密解密’’</p>
+<p>Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，是一种基于64个可打印ASCII字符（A-Z、a-z、0-9、+、/）来表示二进制数据的方法。</p>
+<p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3×8 = 4×6 = 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。故Base64编码具有不可读性，需要解码。</p>
+<p>它是从二进制到字符的过程，将任意字节序列数据编码成ASCII字符串,可用于在HTTP环境下传递较长的标识信息。</p>
+<p>base64编码是通过待加密字符的ASCII码值的八位二进制进行按6位划分，得到新的二进制，转化为十进制后，根据base64编码表进行匹配字符，得到密文。</p>
+<p>Base64的特征：字符串的长度为4的整数倍；字符串的符号取值只能在A-Z, a-z, 0-9, +, /, =共计65个字符中，且=如果出现就必须在结尾出现。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/" data-id="ckta3inbx0002z8trgmbj4i6y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-攻防世界misc——新手练习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/" class="article-date">
+  <time datetime="2021-09-05T12:11:03.000Z" itemprop="datePublished">2021-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/">攻防世界misc——新手练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>001</p>
+<p>Most flags are in the form flag{xxx}, for example:flag{th1s_!s_a_d4m0_4la9}</p>
+<p>002 图片隐写</p>
+<p>题目描述：菜猫给了菜狗一张图，说图下面什么都没有</p>
+<p>题中给出pdf文件。打开后，单单从图片上看什么也没发现。</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/1.PNG" style="zoom:50%;">
+
+<p>解1：移动鼠标发现在图片眼睛位置鼠标形状改变，说明文字出现，直接全选（ctrl+a）复制得到flag</p>
+<p>解2：尝试修改为txt文件，重命名强行改变，查找不到flag，重命名导致了文件不可用</p>
+<p>解3：由题中所给的提示“图下”，直接删除图片，显示flag</p>
+<p>003</p>
+<p>题目描述：菜狗为了打败菜猫，学了一套如来十三掌。</p>
+<p>题中所给的附件打开为word文档，文字内容为禅语。</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/2.PNG" style="zoom: 50%;">
+
+<p>故应该用“与佛论禅网站”解密</p>
+<p>原文放在下框中，点击“参悟佛所言的真意”，得到解码后的内容</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/3.PNG" style="zoom:50%;">
+
+<p>得到的字符串仍是加密过的，接着根据题目提示的“如来十三掌”，使用”rot-13工具”再一次进行解码</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/4.PNG" style="zoom:50%;">
+
+<p>解密后的这串字符有大小写字母、数字，同时长度还是4的倍数，故怀疑为base64加密</p>
+<p>最后使用base64解密，最终得到flag</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/6.PNG" style="zoom:50%;">
+
+
+
+<p>004 图片隐写</p>
+<p>题目描述：菜狗找到了文件中的彩蛋很开心，给菜猫发了个表情包</p>
+<p>打开附件出现了一张gif动图。完整浏览后发现在动图较后的部分出现了一张二维码，在50帧处截图下来</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/7.png"></p>
+<p>发现上图二维码存在缺漏，发现缺少了三个小方块即定位点，故想补全此二维码</p>
+<p>在网上找一张完整二维码的图片，用wps打开裁剪出定位点，复制后补全二维码(方块不可太大，防止覆盖其他部分)</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/8.PNG" style="zoom: 33%;">
+
+<p>扫描二维码后，得到flag</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/" data-id="ckta3inbh0000z8tr1zuld7o0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TCP三次握手" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/02/06/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/" class="article-date">
@@ -244,6 +368,128 @@
     </div>
     <footer class="article-footer">
       <a data-url="http://example.com/2021/01/30/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%A1%A5%E5%85%85/" data-id="ckknty0ui000434tre1px11dp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-渗透测试之漏洞挖掘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" class="article-date">
+  <time datetime="2021-01-27T02:54:37.000Z" itemprop="datePublished">2021-01-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/">渗透测试之漏洞挖掘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="web安全基础"><a href="#web安全基础" class="headerlink" title="web安全基础"></a>web安全基础</h1><p>​                                                     ——基于web的漏洞挖掘（关于网页应用的漏洞挖掘）  如sql注入</p>
+<p>目录：</p>
+<p>web应用安全的基本概念</p>
+<p>web应用的基本架构（组成）</p>
+<p>http协议的基本内容</p>
+<p>Burp Suite、Hackbar工具的基本使用</p>
+<p>利用Burp Suite进行暴力破解</p>
+<hr>
+<p><strong>web应用安全的基本概念：</strong>是指保证web应用系统的安全性，如一个web程序，一台web服务器都是指web应用安全</p>
+<p><strong>web应用程序</strong>（也称web中间件或容器)是用来提供web服务的应用软件</p>
+<p><strong>web服务器</strong>就是部署了web中间件能提供web服务的服务器</p>
+<p><strong>MySQL</strong>是一种开放源代码的关系型数据库管理系统,用常用的数据库编程语言<strong>SQL</strong>进行数据库管理（增删改查）。</p>
+<p><strong>web应用上常见的漏洞：</strong>SQL注入、xss、代码执行、逻辑漏洞</p>
+<p><strong>web应用的前台：</strong>所有人可以访问公开发布的内容，如教务系统</p>
+<p><strong>web应用的后台：</strong>也称网站管理后台，具有更高的操作权限，如管理员，是黑客攻击的重要目标</p>
+<p><strong>web应用的基本架构：</strong></p>
+<p>其中传输数据用http协议。其中协议都是有来有回，有请求和响应两个报文</p>
+<p>应用客户端（浏览器）——通过http协议把数据传到（请求）——-&gt;应用服务器（web服务器）——数据库服务器</p>
+<p>​                |                                                                                                                           |                  （放置用户信息）</p>
+<p>​                &lt;————做出响应返回用户浏览器,用户便看到相关信息 &lt;———————-|</p>
+<p>客户端语言：HTML、JavaScript                                         服务器端语言：PHP、JSP、ASP      数据库编程语言SQL</p>
+<p><strong>web服务器搭建–PHPstudy</strong></p>
+<p>phpstudy是一个集成包，包含apache+php+mysql等</p>
+<p>补：只要通过网络的方式来访问的文件都是需要放在www根目录下面</p>
+<p>例：如何写一个网页 如2021.html</p>
+<p>“其他选项菜单”–&gt;“网站根目录”–&gt;右键–&gt;”新建”–&gt;”文本文档”–&gt;重命名时将后缀名改为html</p>
+<img src="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/1.PNG" style="zoom:50%;">
+
+<p>至于写内容</p>
+<p>右键–&gt;用记事本或者Notepad++（np++是用来写脚本的）</p>
+<p>写完保存即可，之后可通过浏览器访问</p>
+<p>访问方式：链接</p>
+<p>是由 协议+//+ip或域名+/+文件名</p>
+<p><img src="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/2.PNG"></p>
+<p>其中可以用127.0.0.1代替自己的ip地址</p>
+<p>第二个/代表网站根目录，后跟文件名</p>
+<p>补：127.0.0.1是回送地址(localhost)， 指本地机，一般用来测试使用。</p>
+<p>回送地址（127.x.x.x）是本机回送地址</p>
+<p>源码放根目录下</p>
+<p>数据就是报文</p>
+<p>先进行tcp链接即建立三次握手才能发送想要发送的内容 服务器端才会做出相应 客户端才会显示相应结果</p>
+<p>短时间看图</p>
+<p>。exe是安装包或者软件</p>
+<p>cookie用于表明信息</p>
+<p>掌握http协议的基本内容</p>
+<p>前提网站需要存在SQL注入漏洞才可以登入成功</p>
+<p>产生SQL注入的原因：程序没有避免用户的输入的内容改变数据库原有的语义</p>
+<p>sql注入原理（web漏洞）：将用户的输入当作代码/指令在数据库中执行</p>
+<p>例子：</p>
+<p>sql是数据库增添删改的数据库语言</p>
+<p>用户名：admin  密码：password</p>
+<p>在数据库中查询select * from users where username=’admin‘ and password=’1234’最后返回成功或者失败</p>
+<p>万能密码已知用户名为admin</p>
+<p>用户名：admin’or’1’=’1</p>
+<p>原因：闭合单引号使其不会报错 优先级=优先于and优先于or</p>
+<p>利用数据库需要闭合以及优先级顺序</p>
+<p>1=1结果恒为1</p>
+<p>1andpassword（0）结果为0</p>
+<p>admin（1） or 0结果为1</p>
+<p>where后条件为1</p>
+<p>payload </p>
+<p>如何进行防御：过滤用户的特殊输入如：关键词、字符</p>
+<p>​                           进行预编译函数（在网站的脚本上修改）（是根本解决SQL注入漏洞的方法）</p>
+<p>sql语法</p>
+<p>#和– 和//在数据库代表注释</p>
+<p>show databases</p>
+<p>黑客要构造万能密码需要先where 1；</p>
+<p>已知存在SQL注入漏洞可以使用一个工具称sqlmap</p>
+<p>判断SQL注入漏洞的方法：</p>
+<p>用万能密码验证反推</p>
+<p>输入</p>
+<p>1.1.1.1/login.php？ username=1’</p>
+<p>看是否有报错</p>
+<p>若有报错</p>
+<p>再输入</p>
+<p>1.1.1.1/login.php？ username=1’ and ‘1’=’1</p>
+<p>若页面正常则说明可能存在SQL注入</p>
+<p>1.1.1.1/login.php？ username=1’ and ‘1’=’2</p>
+<p>若页面异常</p>
+<p>splmap语法</p>
+<p>splmap-u <a target="_blank" rel="noopener" href="http://1.1.1.1/login.php">http://1.1.1.1/login.php</a>? username=1</p>
+<p>splmap-u <a target="_blank" rel="noopener" href="http://1.1.1.1/login.php">http://1.1.1.1/login.php</a>? username=1–dbs                      dvwa(获取数据库 获取–)</p>
+<p>splmap-u <a target="_blank" rel="noopener" href="http://1.1.1.1/login.php">http://1.1.1.1/login.php</a>? username=1 -D</p>
+<p>若为请求包-r</p>
+<p>nmap </p>
+<p>cd和ls</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" data-id="ckta3inbw0001z8trbnnlhfhg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -591,7 +837,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
     </div>
   </div>
 
@@ -604,6 +850,14 @@
       <ul>
         
           <li>
+            <a href="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/">解题部分工具总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/">攻防世界misc——新手练习</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/06/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/">TCP三次握手</a>
           </li>
         
@@ -613,14 +867,6 @@
         
           <li>
             <a href="/2021/01/30/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%A1%A5%E5%85%85/">渗透基础知识小补充</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/">信息收集与Nmap</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/">C语言的注意点们</a>
           </li>
         
       </ul>
