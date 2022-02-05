@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    
-    <title>
-        信息收集与Nmap |
-        
-        Hexo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="渗透测试思路 1.信息收集（前提） 2.漏洞挖掘：AWVS  payload验证 3.漏洞利用：写payload或者利用工具（sqmap、xsser、c刀） 4.输出渗透测试报告 渗透测试有两种方法 1.白盒（代码审计）（通过代码判断是否存在隐患）（在内网情况下） 2.黑盒（模拟黑客去渗透测试）（在外网情况下如何攻击到服务器里面） 渗透测试之信息收集1.基本信息 1）域名信息（示例：goktech">
+  <meta charset="utf-8">
+  
+
+  
+  <title>信息收集与Nmap | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="渗透测试思路 1.信息收集（前提） 2.漏洞挖掘：AWVS  payload验证 3.漏洞利用：写payload或者利用工具（sqmap、xsser、c刀） 4.输出渗透测试报告 渗透测试有两种方法 1.白盒（代码审计）（通过代码判断是否存在隐患）（在内网情况下） 2.黑盒（模拟黑客去渗透测试）（在外网情况下如何攻击到服务器里面） 渗透测试之信息收集1.基本信息 1）域名信息（示例：goktech">
 <meta property="og:type" content="article">
 <meta property="og:title" content="信息收集与Nmap">
 <meta property="og:url" content="http://example.com/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/index.html">
@@ -25,43 +24,63 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/1.PNG">
-    
-    
-    
-        
-            <link rel="stylesheet" href="http://example.com/css/markdown.css">
-        
-            <link rel="stylesheet" href="http://example.com/css/july.css">
-        
-    
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,700&amp;subset=korean" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
 <meta name="generator" content="Hexo 5.2.0"></head>
+
 <body>
-
-<div id="banner-outer" class="hidden">
-    <div id="banner-image" style="background-image: url()"></div>
-    <img src="https://www.gravatar.com/avatar/7a585313ed855e8d652cbb3154a6056e?s=300&amp;d=mm&amp;r=g" id="avatar">
-</div>
-
-<div id="menu-outer">
-    <div id="menu-inner">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <!--<div id="banner"></div>-->
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        <a href="/" id="main-nav-title" class="main-nav-link">Hexo</a>
         
-            <a class="false" href="http://example.com/index.html">Home</a>
+          <a class="main-nav-link" href="/">Home</a>
         
-            <a class="false" href="http://example.com/archives/index.html">Archives</a>
+          <a class="main-nav-link" href="/archives/">Archives</a>
         
-            <a class="false" href="http://example.com/about/index.html">About</a>
+          <a class="main-nav-link" href="/about/">about</a>
         
+      </nav>
     </div>
-</div>
+  </div>
+</header>
 
-<div id="content-outer" class="container">
-    <div id="content-inner">
-        <article id="post">
-    <h1 id="post-title">信息收集与Nmap</h1>
-    <time id="post-date" datetime="2021-01-25T16:34:38.000Z">
-        January 26, 2021
-    </time>
-    <div id="post-content" class="markdown-body">
+      <div class="outer">
+        <section id="main"><article id="post-信息收集与Nmap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      信息收集与Nmap
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
         <p><strong>渗透测试思路</strong></p>
 <p>1.信息收集（前提）</p>
 <p>2.漏洞挖掘：AWVS  payload验证</p>
@@ -148,65 +167,79 @@
 <p><img src="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/5.PNG" alt="5"></p>
 <p>注：用安全工具时，有时候需要将windows 安全中心中“病毒和威胁防护”关闭</p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/" data-id="ckza6xve500081strfvjp1lp1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Newer</span>
+      <div class="article-nav-title">
+        
+          渗透测试之漏洞挖掘
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-caption">Older</span>
+      <div class="article-nav-title">C语言的注意点们</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-<div id="paginator">
-    
-</div>
-
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> with 
+      theme_by <a href="http://hexo.io/" target="_blank">mango</a>
     </div>
-</div>
-
-<div id="bottom-outer">
-    <div id="bottom-inner">
-        2019-2022 John Doe 皖ICP备16011445号
+  </div>
+</footer>
     </div>
-</div>
-
-<div id="to-top">
-    <i class="iconfont icon-up"></i>
-</div>
-
-
-    
-        <script src="http://example.com/js/jquery-3.4.1.min.js"></script>
-    
-        <script src="http://example.com/js/highlight-9.13.1.min.js"></script>
-    
-        <script src="http://example.com/js/transition.js"></script>
-    
-        <script src="http://example.com/js/smooth-scroll.min.js"></script>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/" class="mobile-nav-link">about</a>
+  
+</nav>
     
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-    <script>
-      $(function () {
-        $('#banner-outer').addClass('fade-out')
-        $('#menu-outer').addClass('fade-show')
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
-        $('pre').each(function (i, block) {
-          hljs.highlightBlock(block);
-        });
-      })
-    </script>
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script>
-  $(function () {
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > 150) {
-        $("#to-top").fadeIn();
-      } else {
-        $("#to-top").fadeOut();
-      }
-    });
-    $("#to-top").click(function () {
-      $("body,html").animate({scrollTop: 0}, 500);
-      return false;
-    })
-  })
-</script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
 </body>
 </html>
