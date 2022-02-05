@@ -1,41 +1,799 @@
-extends base
-- var current_title = page.title || tag.name || category.name || site.title
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block title
-  title= (config.title ? (config.subtitle ? config.title + " | " + config.subtitle : config.title) : "")
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-block main
+<meta name="generator" content="Hexo 5.2.0"></head>
 
-  article
-    #index-main.container.entries
-      for post in page.posts.toArray()
-        .post-entry
-          .post-time= post.date.format(config.date_format)
-          .post-desc
-            .post-title
-              if post.link
-                  a(href=url_for(post.link),target="_blank", itemprop="url")= post.title
-              else
-                  a(href=url_for(post.path))= post.title
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-TCP三次握手" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/06/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/" class="article-date">
+  <time datetime="2021-02-06T11:43:08.000Z" itemprop="datePublished">2021-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/06/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/">TCP三次握手</a>
+    </h1>
+  
 
-            .post-content
-              if post.description
-                != post.description
-              else if post.excerpt
-                != post.excerpt
-              else if post.content
-                - var br = post.content.indexOf('</p>')
-                if br < 0
-                  != post.content
-                else
-                  != post.content.substring(0, br + 4)
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 常读常新</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36903042/article/details/102513465?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522161242902416780264048477%252522%25252C%252522scm%252522%25253A%25252220140713.130102334..%252522%25257D&amp;request_id=161242902416780264048477&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-102513465.first_rank_v2_pc_rank_v29&amp;utm_term=tcp%25E4%25B8%2589%25E6%25AC%25A1%25E6%258F%25A1%25E6%2589%258B">https://blog.csdn.net/qq_36903042/article/details/102513465?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522161242902416780264048477%252522%25252C%252522scm%252522%25253A%25252220140713.130102334..%252522%25257D&amp;request_id=161242902416780264048477&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-102513465.first_rank_v2_pc_rank_v29&amp;utm_term=tcp%25E4%25B8%2589%25E6%25AC%25A1%25E6%258F%25A1%25E6%2589%258B</a></p>
+<p>转自作者小鹿</p>
 
-            .post-meta
-              if (post.tags && post.tags.length)
-                .post-tags
-                  != list_tags(post.tags, {show_count: false, class: 'post-tag', style:'none', separator:'/'})
-              if (post.categories && post.categories.length)
-                .post-categories
-                  != list_categories(post.categories, {show_count: false, class: 'post-category', style: 'none', separator: '>'})
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/06/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B/" data-id="ckza3vhjy00052strb4z94wne" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
 
-  include _partial/paginator.jade
+
+  
+    <article id="post-hexo上传到github与markdown语法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2021-02-03T02:30:54.000Z" itemprop="datePublished">2021-02-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/">hexo上传到github与markdown语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总是忘七忘八。</p>
+<p>[TOC]</p>
+<h1 id="一、hexo上传到github"><a href="#一、hexo上传到github" class="headerlink" title="一、hexo上传到github"></a>一、hexo上传到github</h1><h3 id="1-创建文件"><a href="#1-创建文件" class="headerlink" title="1.创建文件"></a>1.创建文件</h3><p>右键打开”Git Bash Here”, 输入如下命令</p>
+<p>hexo new “title”</p>
+<p>在<img src="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/9.PNG" alt="9">中</p>
+<p>创建标题为title的文章</p>
+<h3 id="2-编写文章"><a href="#2-编写文章" class="headerlink" title="2.编写文章"></a>2.编写文章</h3><h3 id="3-部署发布"><a href="#3-部署发布" class="headerlink" title="3.部署发布"></a>3.部署发布</h3><p>右键打开”Git Bash Here”,输入</p>
+<p>hexo g部署</p>
+<p>hexo d发布</p>
+<h1 id="二、markdown简单语法"><a href="#二、markdown简单语法" class="headerlink" title="二、markdown简单语法"></a>二、markdown简单语法</h1><p>markdown 是一种标记语言</p>
+<p>markdown 编辑器：Typora</p>
+<p>markdown语法：</p>
+<h3 id="1）标题"><a href="#1）标题" class="headerlink" title="1）标题"></a>1）标题</h3><p><img src="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/10.PNG" alt="10"></p>
+<h3 id="2）标记"><a href="#2）标记" class="headerlink" title="2）标记"></a>2）标记</h3><p><img src="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/11.PNG" alt="11"></p>
+<h3 id="3）分割线"><a href="#3）分割线" class="headerlink" title="3）分割线"></a>3）分割线</h3><p><img src="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/12.PNG" alt="12"></p>
+<h3 id="4-图片"><a href="#4-图片" class="headerlink" title="4)图片"></a>4)图片</h3><p>创建文章后，同时在<img src="/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/9.PNG" alt="9">中</p>
+<p>生成一个与 title 同名的文件夹，我们只需将图片放进此文件夹中，然后在文章中引用即可</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/03/hexo%E4%B8%8A%E4%BC%A0%E5%88%B0github%E4%B8%8Emarkdown%E8%AF%AD%E6%B3%95/" data-id="ckza3vhjz00062strfqhzh6ko" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-渗透基础知识小补充" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/30/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%A1%A5%E5%85%85/" class="article-date">
+  <time datetime="2021-01-29T17:50:06.000Z" itemprop="datePublished">2021-01-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/30/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%A1%A5%E5%85%85/">渗透基础知识小补充</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>记一次国科渗透攻防项目实战课</em></p>
+<p>​                                                        <em>in advance</em></p>
+<h1 id="补充知识："><a href="#补充知识：" class="headerlink" title="补充知识："></a>补充知识：</h1><p><strong>VMWare</strong> （Virtual Machine ware)</p>
+<p>是一个“虚拟PC”</p>
+<p>可以在一台机器上同时运行更多Windows、DOS、LINUX系统</p>
+<p>setup：安装</p>
+<p>domain：域名</p>
+<p>DNS：域名服务器（Domain Name System）</p>
+<p><strong>系统服务：</strong>电脑启动软件也启动  </p>
+<p> 对应<strong>“非服务模式”：</strong>手动启动，不随电脑启动而启动</p>
+<p><strong>index：</strong>是名称，一般首页都命名为index</p>
+<p>**url:**在www上，每一信息资源都有在网上唯一的地址，该地址就叫url，就是指网络地址。通俗讲，链接叫url </p>
+<p><strong>ip地址：</strong>IP地址由两部分组成，即网络地址和主机地址。</p>
+<ol>
+<li><p>网络号 net-id，它标志主机（或路由器）所连接到的网络，网络地址表示其属于互联网的哪一个网络</p>
+</li>
+<li><p>主机号 host-id，它标志该主机（或路由器），主机地址表示其属于该网络中的哪一台主机</p>
+<p>延：192.168.1.1 掩码255.255.255.0，那么网络号就是192.168.1.0，也就是它的网段</p>
+</li>
+</ol>
+<p><strong>C段：</strong>指的是同一内网段内的其他服务器，每个IP有ABCD四个段，举个例子，192.168.0.1，A段就是192，B段是168，C段是0，D段是1</p>
+<p>而C段嗅探的意思就是拿下它同一C段中的一台服务器，也就是说是D段1-255中的一台服务器</p>
+<p><strong>Ping：</strong> 是 Windows 和 Linux 都自带的一个扫描工具，用于校验与远程计算机或本机的连接</p>
+<p><strong>主机存活：</strong>主机开启</p>
+<p><strong>网关</strong>：就是一个网络连接到另一个网络的“关口”，也就是网络关卡。</p>
+<p>从一个房间走到另一个房间，必然要经过一扇门。同样，从一个网络向另一个网络发送信</p>
+<p>息，也必须经过一道“关口“，这道关口就是网关。</p>
+<p><strong>备案号：</strong>是网站是否合法注册经营的标志，一个网站域名要上线必然要经过备案程序</p>
+<p><strong>linux系统:</strong></p>
+<p>一.linux的<strong>主要目录</strong></p>
+<p>1./etc–系统配置文件存放的目录</p>
+<p>2./bin–保存可执行二进制文件的目录，如ls、tar、mv、cat</p>
+<p>3./–根目录（在linux下有且只有一个根目录。然后在/目录在有子目录如/root、/home、/etc/、/bin等</p>
+<p>4./home–系统默认的用户家目录</p>
+<p>二.linux<strong>快捷键</strong></p>
+<p>放大终端 Ctrl Shift +</p>
+<p>打开终端Ctrl+Alt+t或者右键点击 出现的便是shell界面</p>
+<p>类似windows操作系统下的终端命令行 </p>
+<p>即cmd界面 </p>
+<img src="/2021/01/30/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%A1%A5%E5%85%85/cmd.PNG" alt="cmd" style="zoom: 50%;">
+
+<p>按下“确定”按钮 便弹出一个黑色的终端软件</p>
+<p>如果要看当前的用户主机名则输入whoami命令，则显示：主机名\用户名</p>
+<p>如果我们要看看自己电脑的网络配置啊ip地址啊，可以输入ipconfig命令，并按下回车</p>
+<p>三、linux系统安全工具之<strong>Nmap</strong></p>
+<p>Nmap（Network Mapper）是一款开放源代码的网络探测和安全审核的工具。它使用原始IP来发现网络上有哪些主机，那些主机提供什么服务(应用程序名和版本)，那些服务运行在什么操作系统(包括版本信息)，它们使用什么类型的报文过滤器/防火墙。</p>
+<p>总的来说其基本功能有四个：</p>
+<ol>
+<li><p>发现主机</p>
+</li>
+<li><p>扫描端口</p>
+</li>
+<li><p>侦测版本</p>
+</li>
+<li><p>侦测操作系统</p>
+</li>
+</ol>
+<p>   Nmap所识别的几个<strong>端口状态:</strong></p>
+<p>open   –开放  closed  –关闭</p>
+<p>filtered  –被过滤</p>
+<p>open|filtered  –开放或者被过滤</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/30/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%A1%A5%E5%85%85/" data-id="ckza3vhk8000e2str6ga603k2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-渗透测试之漏洞挖掘" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" class="article-date">
+  <time datetime="2021-01-27T02:54:37.000Z" itemprop="datePublished">2021-01-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/">渗透测试之漏洞挖掘</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="web安全基础"><a href="#web安全基础" class="headerlink" title="web安全基础"></a>web安全基础</h1><p>​                                                     ——基于web的漏洞挖掘（关于网页应用的漏洞挖掘）  如sql注入</p>
+<p>目录：</p>
+<p>web应用安全的基本概念</p>
+<p>web应用的基本架构（组成）</p>
+<p>http协议的基本内容</p>
+<p>Burp Suite、Hackbar工具的基本使用</p>
+<p>利用Burp Suite进行暴力破解</p>
+<hr>
+<p><strong>web应用安全的基本概念：</strong>是指保证web应用系统的安全性，如一个web程序，一台web服务器都是指web应用安全</p>
+<p><strong>web应用程序</strong>（也称web中间件或容器)是用来提供web服务的应用软件</p>
+<p><strong>web服务器</strong>就是部署了web中间件能提供web服务的服务器</p>
+<p><strong>MySQL</strong>是一种开放源代码的关系型数据库管理系统,用常用的数据库编程语言<strong>SQL</strong>进行数据库管理（增删改查）。</p>
+<p><strong>web应用上常见的漏洞：</strong>SQL注入、xss、代码执行、逻辑漏洞</p>
+<p><strong>web应用的前台：</strong>所有人可以访问公开发布的内容，如教务系统</p>
+<p><strong>web应用的后台：</strong>也称网站管理后台，具有更高的操作权限，如管理员，是黑客攻击的重要目标</p>
+<p><strong>web应用的基本架构：</strong></p>
+<p>其中传输数据用http协议。其中协议都是有来有回，有请求和响应两个报文</p>
+<p>应用客户端（浏览器）——通过http协议把数据传到（请求）——-&gt;应用服务器（web服务器）——数据库服务器</p>
+<p>​                |                                                                                                                           |                  （放置用户信息）</p>
+<p>​                &lt;————做出响应返回用户浏览器,用户便看到相关信息 &lt;———————-|</p>
+<p>客户端语言：HTML、JavaScript                                         服务器端语言：PHP、JSP、ASP      数据库编程语言SQL</p>
+<p><strong>web服务器搭建–PHPstudy</strong></p>
+<p>phpstudy是一个集成包，包含apache+php+mysql等</p>
+<p>补：只要通过网络的方式来访问的文件都是需要放在www根目录下面</p>
+<p>例：如何写一个网页 如2021.html</p>
+<p>“其他选项菜单”–&gt;“网站根目录”–&gt;右键–&gt;”新建”–&gt;”文本文档”–&gt;重命名时将后缀名改为html</p>
+<img src="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/1.PNG" style="zoom:50%;">
+
+<p>至于写内容</p>
+<p>右键–&gt;用记事本或者Notepad++（np++是用来写脚本的）</p>
+<p>写完保存即可，之后可通过浏览器访问</p>
+<p>访问方式：链接</p>
+<p>是由 协议+//+ip或域名+/+文件名</p>
+<p><img src="/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/2.PNG"></p>
+<p>其中可以用127.0.0.1代替自己的ip地址</p>
+<p>第二个/代表网站根目录，后跟文件名</p>
+<p>补：127.0.0.1是回送地址(localhost)， 指本地机，一般用来测试使用。</p>
+<p>回送地址（127.x.x.x）是本机回送地址</p>
+<p>源码放根目录下</p>
+<p>数据就是报文</p>
+<p>先进行tcp链接即建立三次握手才能发送想要发送的内容 服务器端才会做出相应 客户端才会显示相应结果</p>
+<p>短时间看图</p>
+<p>。exe是安装包或者软件</p>
+<p>cookie用于表明信息</p>
+<p>掌握http协议的基本内容</p>
+<p>前提网站需要存在SQL注入漏洞才可以登入成功</p>
+<p>产生SQL注入的原因：程序没有避免用户的输入的内容改变数据库原有的语义</p>
+<p>sql注入原理（web漏洞）：将用户的输入当作代码/指令在数据库中执行</p>
+<p>例子：</p>
+<p>sql是数据库增添删改的数据库语言</p>
+<p>用户名：admin  密码：password</p>
+<p>在数据库中查询select * from users where username=’admin‘ and password=’1234’最后返回成功或者失败</p>
+<p>万能密码已知用户名为admin</p>
+<p>用户名：admin’or’1’=’1</p>
+<p>原因：闭合单引号使其不会报错 优先级=优先于and优先于or</p>
+<p>利用数据库需要闭合以及优先级顺序</p>
+<p>1=1结果恒为1</p>
+<p>1andpassword（0）结果为0</p>
+<p>admin（1） or 0结果为1</p>
+<p>where后条件为1</p>
+<p>payload </p>
+<p>如何进行防御：过滤用户的特殊输入如：关键词、字符</p>
+<p>​                           进行预编译函数（在网站的脚本上修改）（是根本解决SQL注入漏洞的方法）</p>
+<p>sql语法</p>
+<p>#和– 和//在数据库代表注释</p>
+<p>show databases</p>
+<p>黑客要构造万能密码需要先where 1；</p>
+<p>已知存在SQL注入漏洞可以使用一个工具称sqlmap</p>
+<p>判断SQL注入漏洞的方法：</p>
+<p>用万能密码验证反推</p>
+<p>输入</p>
+<p>1.1.1.1/login.php？ username=1’</p>
+<p>看是否有报错</p>
+<p>若有报错</p>
+<p>再输入</p>
+<p>1.1.1.1/login.php？ username=1’ and ‘1’=’1</p>
+<p>若页面正常则说明可能存在SQL注入</p>
+<p>1.1.1.1/login.php？ username=1’ and ‘1’=’2</p>
+<p>若页面异常</p>
+<p>splmap语法</p>
+<p>splmap-u <a target="_blank" rel="noopener" href="http://1.1.1.1/login.php">http://1.1.1.1/login.php</a>? username=1</p>
+<p>splmap-u <a target="_blank" rel="noopener" href="http://1.1.1.1/login.php">http://1.1.1.1/login.php</a>? username=1–dbs                      dvwa(获取数据库 获取–)</p>
+<p>splmap-u <a target="_blank" rel="noopener" href="http://1.1.1.1/login.php">http://1.1.1.1/login.php</a>? username=1 -D</p>
+<p>若为请求包-r</p>
+<p>nmap </p>
+<p>cd和ls</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/27/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E4%B9%8B%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" data-id="ckza3vhkb000h2strakx8bjdw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-信息收集与Nmap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/" class="article-date">
+  <time datetime="2021-01-25T16:34:38.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/">信息收集与Nmap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>渗透测试思路</strong></p>
+<p>1.信息收集（前提）</p>
+<p>2.漏洞挖掘：AWVS  payload验证</p>
+<p>3.漏洞利用：写payload或者利用工具（sqmap、xsser、c刀）</p>
+<p>4.输出渗透测试报告</p>
+<p><strong>渗透测试有两种方法</strong></p>
+<p>1.白盒（代码审计）（通过代码判断是否存在隐患）（在内网情况下）</p>
+<p>2.黑盒（模拟黑客去渗透测试）（在外网情况下如何攻击到服务器里面）</p>
+<h1 id="渗透测试之信息收集"><a href="#渗透测试之信息收集" class="headerlink" title="渗透测试之信息收集"></a>渗透测试之信息收集</h1><p><strong>1.基本信息</strong></p>
+<p>1）域名信息（示例：goktech.cn）–站长之家–<a target="_blank" rel="noopener" href="http://whois.chinaz.com/">http://whois.chinaz.com/</a></p>
+<p>2）子域名(示例：bbs.goktech.cn)                    –<a target="_blank" rel="noopener" href="https://phpinfo.me/domain/">https://phpinfo.me/domain/</a> (在线子域名查询)</p>
+<p>​                                                                               –Layer子域名挖掘机4.2 纪念版</p>
+<p>3）ip地址                                           –站长之家–<a target="_blank" rel="noopener" href="http://ip.tool.chinaz.com/">http://ip.tool.chinaz.com/</a></p>
+<p>4）同ip的其他网站（旁站）信息    –站长之家–<a target="_blank" rel="noopener" href="http://stool.chinaz.com/same">http://stool.chinaz.com/same</a></p>
+<p>​                                                                              –<a target="_blank" rel="noopener" href="https://www.webscan.cc/">https://www.webscan.cc/</a></p>
+<p>5）同网段的其他服务器（c段）信息 c段常用在护网或攻防中 </p>
+<p>​                                                                               –<a target="_blank" rel="noopener" href="https://www.webscan.cc/">https://www.webscan.cc/</a></p>
+<p>例：宿舍几台计算机所处的环境就是同网段，是一个小型的g网</p>
+<p>6）端口信息：80（80端口对应http协议）</p>
+<p>​                        443（https协议）</p>
+<p>​                        445（445端口对应共享文件夹） –Nmap</p>
+<p>7）服务（web服务即网页服务），服务版本（version）     –Nmap</p>
+<p>8）信息泄露（密码收集）                                    –<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
+<p>9）网站目录                                                           –御剑</p>
+<p>10）业务信息                                                         –搜索引擎，如：谷歌、百度</p>
+<p>11）备案号                                                             –<a target="_blank" rel="noopener" href="http://icp.chinaz.com/">http://icp.chinaz.com/</a></p>
+<p>12）快速切换搜索引擎获得搜索结果                   –听潮社区URL采集工具2.3</p>
+<p>注：</p>
+<p>旁站的利用：旁站指的是同一服务器上的其他网站，很多时候，有些网站可能不容易入侵。那么，可以查看该网站所在的服务器上是否还有其他网站。如果有其他网站的话，可以先拿下其他网站，然后再拿到服务器的权限，最后就自然可以拿下该网站。</p>
+<p>故不管攻击哪一个网站，都是同一台服务器。因为同ip意味搭建在同一台服务器上。</p>
+<p>报错信息的利用：也许会涉及敏感信息。因为不同的中间件有不同的漏洞</p>
+<p>端口的利用：通过服务器端口是否开放判断有无提供对应的服务。如开放80端口便是提供一个网页的服务。故也可能存在漏洞。</p>
+<p>但是端口可以被修改。如可以将http对应的端口改为8080端口。即默认是80，可以人为修改。故80端口不一定是http。所以要收集服务。</p>
+<p>备案号的利用：利用备案号反向去查目标的所有合法网站。</p>
+<p><strong>2.os版本</strong></p>
+<p>​                –Nmap工具（kali要有ip地址，并且目标服务）</p>
+<p>操作系统（operation system，简称OS），包含windows server、Linux、mac</p>
+<p><strong>3.web中间件</strong>（web程序，用来提供网页服务）</p>
+<p>类型、版本：iis、apache、nginx、weblogic</p>
+<p><strong>4.数据库</strong></p>
+<p>类型、版本：mysql、mssql、oracle、access</p>
+<p><strong>5.后端的脚本类型</strong></p>
+<p>php、jsp、asp、aspx</p>
+<h1 id="kali-linux下Nmap的使用"><a href="#kali-linux下Nmap的使用" class="headerlink" title="kali linux下Nmap的使用"></a>kali linux下Nmap的使用</h1><p>打开终端</p>
+<p>首先看下自己是否有IP地址。因为没有IP地址是无法用namp工具的。输入ifconfig，得到前一个inet行。</p>
+<p>如果获取不到（没有地址的话）</p>
+<p>则输入dhclient 重新获取IP地址</p>
+<p>先有kali的IP地址</p>
+<p>并且可以和自己的目标服务器网络可达（可以ping对方）</p>
+<p>不排除有些服务器禁ping</p>
+<p><strong>命令合集：</strong></p>
+<p>基本命令格式</p>
+<p>nmap +参数 +ip/网段/域名（主机名）如baidu.com</p>
+<p>其中参数可以结合在一起使用</p>
+<p>1.判断主机存活</p>
+<p>nmap -sn +域名</p>
+<p>​                  +ip地址</p>
+<p>​                   +网段+/+子网掩码（判断在网段中哪些主机是存活）</p>
+<p>-sn效果同-sP（s代表扫描 P意味着用ping的方式）</p>
+<p>2.查看操作系统版本os details或version、端口port</p>
+<p>nmap -O +目标ip地址（-O这个是大写英文O）此命令默认用-sS方式扫描即等同于</p>
+<p>nmap -sS -O +目标ip地址</p>
+<p>3.查看更多的参数</p>
+<p>nmap –help同</p>
+<p>nmap -h</p>
+<p>扫描方式：</p>
+<p><img src="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/1.PNG" alt="1"></p>
+<p>注：默认用-sS方式扫描，即没有第三次握手这个过程</p>
+<p>​       53端口是基于udp协议，而80端口基于tcp协议</p>
+<p>扫描指定的端口：</p>
+<img src="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/2.PNG" alt="2" style="zoom: 50%;">
+
+<p>如：nmap -p 80,443 +ip地址    即-p +端口号</p>
+<p>​        -sV服务版本</p>
+<p>​        -A类似于-sV和-O组合（All）</p>
+<p>​        输出时,也可以用导出符 &gt;</p>
+<p> 应用：</p>
+<p><img src="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/3.PNG" alt="3"></p>
+<p>注：在linux中cat是用于查看文件的命令</p>
+<p>eg：密码收集</p>
+<p><img src="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/4.PNG" alt="4"></p>
+<p> 若收索出哈希加密，可以通过<a target="_blank" rel="noopener" href="https://www.cmd5.com/%E8%A7%A3%E5%AF%86">https://www.cmd5.com/解密</a></p>
+<p>eg：</p>
+<p><img src="/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/5.PNG" alt="5"></p>
+<p>注：用安全工具时，有时候需要将windows 安全中心中“病毒和威胁防护”关闭</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/26/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E4%B8%8ENmap/" data-id="ckza3vhk400082stra9hgh60t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-C语言的注意点们" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/" class="article-date">
+  <time datetime="2020-11-10T15:13:49.000Z" itemprop="datePublished">2020-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/">C语言的注意点们</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>诞生自教训中的C语言的注意点们</em></strong></p>
+<p>1.一字节=8个二进制位 无符号数一定为整数</p>
+<hr>
+<p>2.用/运算时：整数/整数=整数（舍去小数的整型数）</p>
+<p>   用%运算时：只能用于整数 符号与%左侧符号相同</p>
+<p>   用int运算时：int(number)求不大于number 的最大整数，int(3.8)=3，int(-3.8)=-4</p>
+<hr>
+<p>3.所有变量应赋初值，给变量赋初值需取地址&amp;</p>
+<hr>
+<p>4.scanf()是格式输入函数 scanf(格式控制序列，地址序列); </p>
+<p>注1:如(“a=%d…”,&amp;a,&amp;…);</p>
+<p>注2:d为十进制整数 格式说明符由%接格式字符组成 </p>
+<hr>
+<p>5.强制类型转换 格式:(类型名)(表达式)</p>
+<p>注1：单个变量可以不加括号</p>
+<p>注2：不改变变量类型 如(double)a只是将变量a的值转换成一个double型的中间量 a的数据类型未转换成double型</p>
+<hr>
+<p>6.switch语句 实现多路分支选择避免嵌套的if结构分支过多</p>
+<p>格式 switch(整型表达式){</p>
+<p>​          case 整型常量表达式1: 语句组1;break;</p>
+<p>​          ……</p>
+<p>​          case 整型常量表达式n: 语句组n;break;</p>
+<p>​          [default: 语句组n+1]</p>
+<p>​        } </p>
+<p>注1：整型常量表达式可是字符型常量（字符型常量以ASCⅠⅠ码值表示），为整型值。同理，整形表达式可是字符型变量组成的表达式只要有一个整型值</p>
+<hr>
+<p>7.自增运算符++ 单目运算符 优先级高于所有双目运算符 自右向左结合</p>
+<p>++i 使用i前 先i加1</p>
+<p>i++ 使用i后，i加1</p>
+<hr>
+<p>8.while语句用来实现当型循环 格式 while（表达式）</p>
+<p>​                  循环体</p>
+<p>当条件成立（表达式的值!=0），执行循环体。执行完后再判断条件直到条件不满足（表达式的值为0）</p>
+<hr>
+<p>9.digit：数字</p>
+<hr>
+<p><strong><em>延:</em></strong>                           </p>
+<p>确定整数的位数</p>
+<p>解1：</p>
+<p>​       <img src="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/Users\86138\Desktop\例子1.png" alt="解法1">             </p>
+<p>注：其中i++也可以</p>
+<p>解2：</p>
+<p><img src="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/Users\86138\Pictures\例子2.png" alt="解法2"></p>
+<p>对比：</p>
+<p> 三位整数的各位a、十位b、百位c</p>
+<p><img src="/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/Users\86138\Desktop\示例3.png" alt="示例"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/10/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%E4%BB%AC/" data-id="ckza3vhjx00042strcu1591po" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/02/HTML/" class="article-date">
+  <time datetime="2020-11-02T15:03:41.000Z" itemprop="datePublished">2020-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/02/HTML/">HTML</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>入门PHP，代码小白开始在HTML之路上开始探索。</p>
+<p>学习目标：使用HTML创建自己的Web站点</p>
+<hr>
+<p><strong>结构</strong></p>
+<p><img src="/2020/11/02/HTML/Users\86138\Desktop\格式.png" 示例图片"" alt=" 格式"></p>
+<p>1.声明为HTML5文档</p>
+<p>2.定义HTML文档</p>
+<p>3.包含了文档的元（meta）数据</p>
+<p>4.定义网页编码格式为 utf-8或GBK防止中文乱码</p>
+<p>5.叙述了文档的标题</p>
+<p>7.包含了可见的页面内容</p>
+<p>9.定义一个大标题</p>
+<p>11.定义一个段落</p>
+<hr>
+<p><strong>知识基础</strong></p>
+<p>HTML是用于创建网页的标记语言 </p>
+<p>标签与属性需要小写</p>
+<p>标签成对出现 如开始标签<b>和结束标签</b></p>
+<p>用Web浏览器读取HTML文件将其作为网页显示</p>
+<p>标题</p><h1>-<h6>由大到小<p></p>
+<p>连续的空格或空行都会被算作一个空格 而浏览器会自动地在标题、段落的前后添加空行</p>
+<hr>
+<p>链接语法用于在HTML文档中创建链接点击这些内容来跳转到新的文档或者当前文档中的某个部分、跳出框架</p>
+<p><strong>注：</strong>创建的链接可以是字或词或图像或电子邮件</p>
+<p>​       id属性用于在当前页面链接到指定位置</p>
+<p>​       在使用HTML链接时，可以将target属性设置为 “_blank”, 使链接在新窗口打开</p>
+<p>​       img标签的<src>属性 替换当前元素 指示地址位置 引用的路径是img要加载的路径 </src></p>
+<p>​                          <alt>属性 规定在图像无法显示时的替代文本</alt></p>
+<p>​      若要设置无边框图片只需要将border设置为0</p>
+<hr>
+<p>url：Web浏览器通过<em>URL</em>从Web服务器请求页面</p>
+<p>base：当页面中的a超链接标签没有设置href属性的值和没有设置target属性的值时，默认使用base标签中的href属性的值和target属性的值</p>
+</h6></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/11/02/HTML/" data-id="ckza3vhjv00022strad6r2say" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/18/hello-world/" class="article-date">
+  <time datetime="2020-10-18T11:05:21.383Z" itemprop="datePublished">2020-10-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/18/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/10/18/hello-world/" data-id="ckza3vhju00012str2hs85vgn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/">python错误提示</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/">回转轮加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/">栅栏密码</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/">单码加密法和仿射加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/">密码学之python的三个库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

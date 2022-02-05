@@ -1,40 +1,263 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block title
-  title= page.title + " | " + config.title
+  
+  <title>Caesar | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="密码学之恺撒密码 起源 凯撒密码 名称：恺撒密码（Caesar cipher）（恺撒加密、恺撒变换、变换加密） 定义：是一种替换加密的技术。 规则：明文中的所有字母都在字母表顺序下向后按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D。 用途：被作为其他更复杂的加密方法中的一步，例如维吉尼亚密码。此外，恺撒密码还在ROT13系统中被应用。 缺点：和所有的利用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caesar">
+<meta property="og:url" content="http://example.com/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="密码学之恺撒密码 起源 凯撒密码 名称：恺撒密码（Caesar cipher）（恺撒加密、恺撒变换、变换加密） 定义：是一种替换加密的技术。 规则：明文中的所有字母都在字母表顺序下向后按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D。 用途：被作为其他更复杂的加密方法中的一步，例如维吉尼亚密码。此外，恺撒密码还在ROT13系统中被应用。 缺点：和所有的利用">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/1.PNG">
+<meta property="article:published_time" content="2021-09-19T12:11:42.000Z">
+<meta property="article:modified_time" content="2021-09-27T07:10:13.467Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/1.PNG">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-block main
+<meta name="generator" content="Hexo 5.2.0"></head>
 
-  // gallery that comes before the header
-  if page.photos
-     if page.photos.length
-      .article-gallery
-        .article-gallery-photos.container
-          for photo in page.photos
-            a.article-gallery-img.fancybox(href=url_for(photo), rel="gallery_" + page._id)
-              img(src=url_for(photo), itemprop="image")
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Caesar Cipher+Vigenère Cipher" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/" class="article-date">
+  <time datetime="2021-09-19T12:11:42.000Z" itemprop="datePublished">2021-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Caesar
+    </h1>
+  
 
-  .wrapper
-    .container.post-header
-      h1: = page.title
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>密码学之恺撒密码</p>
+<p>起源</p>
+<p>凯撒密码</p>
+<p>名称：恺撒密码（Caesar cipher）（恺撒加密、恺撒变换、变换加密）</p>
+<p>定义：是一种替换加密的技术。</p>
+<p>规则：明文中的所有字母都在字母表顺序下向后按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D。</p>
+<p>用途：被作为其他更复杂的加密方法中的一步，例如维吉尼亚密码。此外，恺撒密码还在ROT13系统中被应用。</p>
+<p>缺点：和所有的利用字母表进行替换的加密技术一样，恺撒密码容易被破解，在实际应用中也无法保证通信安全。</p>
+<p>特定恺撒密码名称：由偏移量的不同划分</p>
+<p>偏移量为10：Avocat(A→K)</p>
+<p>偏移量为13：ROT13</p>
+<p>偏移量为-5：Cassis (K 6)</p>
+<p>偏移量为-6：Cassette (K 7)</p>
+<p>密码破解：</p>
+<p>即使使用唯密文攻击，恺撒密码也是一种容易破解的加密方式。有两种情况：</p>
+<p>（1）攻击者知道（或者猜测）密码中使用了某个简单的替换加密方式，但是不确定是恺撒密码；</p>
+<p>（2）攻击者知道（或者猜测）使用了恺撒密码，但是不知道其偏移量。</p>
+<p>对于第一种情况，攻击者可以通过使用诸如<strong>频率分析</strong>或者<strong>样式单词分析</strong>的方法，马上就能从分析结果中看出规律，得出加密者使用的是恺撒密码。</p>
+<p>而第二种情况更简单。由于使用恺撒密码进行加密的语言一般是<strong>字母系统</strong>，因此密码中可能是使用的偏移量也是有限的，例如使用26个字母的英语，它的偏移量最多就是25（偏移量26等同于偏移量0；偏移量超过26，循环）。因此可以通过穷举法破解。</p>
+<p>例如，被选择出的密文片段是”EXXEGOEXSRGI”。通过在每一个密文单词的每一个字母上面，纵向写出其他字母，然后通过分析，得出其中的某一行便是明文。</p>
+<p>另外一种攻击方法是<strong>频率分析</strong>。当密文长度足够大的情况下，可以先分析密文中每个字母出现的频率，然后将这一频率与该语言字母表中所有字母的出现频率做比较。例如在英语中，正常明文中字母E和T出现的频率特别高，而字母Q和Z出现的频率特别低。可以通过这一特点，分析密文字母出现的频率，可以估计出正确的偏移量。此外，有时还可以将频率分析从字母推广到单词，例如英语中，出现频率最高的单词是：the, of, and, a, to, in…。我们可以通过将最常见的单词的所有可能的25组密文，编组成字典，进行分析。比如QEB可能是the，MPQY可能是单词know（当然也可能是aden）。但是频率分析也有其局限性，它对于<strong>较短或故意省略元音字母或者其他缩写方式</strong>写成的明文加密出来的密文进行解密并不适用。</p>
+<p>另外，通过多次使用恺撒密码来加密并不能获得更大的安全性，因为使用偏移量A加密得到的结果再用偏移量B加密，等同于使用A+B的偏移量进行加密的结果。</p>
+<p>恺撒密码的加密、解密方法还能够通过<strong>同余</strong>的数学方法进行计算。首先将字母用数字代替，A=0，B=1，…，Z=25。此时偏移量为k的加密方法即为：</p>
+<p>​                                                     c =（m+k）mod 26</p>
+<p>同理解密为：                             m =（c-k）  mod  26</p>
+<p>发展</p>
+<p>多表密码</p>
+<p>人们在单一恺撒密码的基础上扩展出多表密码，称为“维吉尼亚”密码，它是由一些偏移量不同的恺撒密码组成。特点是将26个恺撒密表（凯撒密码组成密码字母表）合成一个。维吉尼亚密码引入了“密钥”的概念，即根据密钥来决定用哪一行的密表来进行替换，以此来对抗字频统计。同时初学者通常难以破解，因而又被称为“不可破译的密码”。</p>
+<p>为了生成密码，需要使用表格法。这一表格包括了26行字母表，每一行都由前一行向左偏移一位得到。具体使用哪一行字母表进行编译是基于密钥进行的，在过程中会不断地变换。</p>
+<img src="/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/1.PNG" style="zoom:50%;">
 
-  .wrapper
-    .container.meta
-      .post-time= page.date.format(config.date_format)
-      if (page.categories && page.categories.length)
-        .post-categories
-          != list_categories(page.categories, {show_count: false, class: 'post-category', style: 'none', separator: '>'})
-      if (page.tags && page.tags.length)
-        .post-tags
-          != list_tags(page.tags, {show_count: false, class: 'post-tag', style:'none', separator:'/'})
+<p>例如，假设明文为：</p>
+<p>ATTACKATDAWN</p>
+<p>选择某一关键词并重复而得到密钥，如关键词为LEMON时，密钥为：</p>
+<p>LEMONLEMONLE</p>
+<p>对于明文的第一个字母A，对应密钥的第一个字母L，于是使用表格中L行字母表进行加密，得到密文第一个字母L。类似地，明文第二个字母为T，在表格中使用对应的E行进行加密，得到密文第二个字母X,以此类推。即为“密钥行，明文列”。</p>
+<p>解密的过程则与加密相反。例如：根据密钥第一个字母L所对应的L行字母表，发现密文第一个字母L位于A列，因而明文第一个字母为A。密钥第二个字母E对应E行字母表，而密文第二个字母X位于此行T列，因而明文第二个字母为T。以此类推便可得到明文。</p>
+<p>用数字0-25代替字母A-Z，维吉尼亚密码的加密文法可以写成同余的形式：</p>
+<p>​                                                  c = （m+k）mod 26</p>
+<p>解密方法则能写成：</p>
+<p>​                                                  m =（c-k） mod  26</p>
+<p>注：</p>
+<p>在密码学中，唯密文攻击是一种攻击模式，指的是在仅知密文的情况下进行攻击。此方案可同时用于攻击对称密码体制和非对称密码体制。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/" data-id="ckza3vhjr00002strbnflcf4m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          密码学之python的三个库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Crypto之RSA算法入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
 
 
-  article
-    .container.post
-      != page.content
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/">python错误提示</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/">回转轮加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/">栅栏密码</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/">单码加密法和仿射加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/">密码学之python的三个库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
-    // comment system
-    .container
-      hr
-      include _partial/comments
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
