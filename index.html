@@ -1,41 +1,868 @@
-extends base
-- var current_title = page.title || tag.name || category.name || site.title
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block title
-  title= (config.title ? (config.subtitle ? config.title + " | " + config.subtitle : config.title) : "")
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-block main
+<meta name="generator" content="Hexo 5.2.0"></head>
 
-  article
-    #index-main.container.entries
-      for post in page.posts.toArray()
-        .post-entry
-          .post-time= post.date.format(config.date_format)
-          .post-desc
-            .post-title
-              if post.link
-                  a(href=url_for(post.link),target="_blank", itemprop="url")= post.title
-              else
-                  a(href=url_for(post.path))= post.title
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-python错误提示" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/" class="article-date">
+  <time datetime="2021-10-04T03:16:02.000Z" itemprop="datePublished">2021-10-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/">python错误提示</a>
+    </h1>
+  
 
-            .post-content
-              if post.description
-                != post.description
-              else if post.excerpt
-                != post.excerpt
-              else if post.content
-                - var br = post.content.indexOf('</p>')
-                if br < 0
-                  != post.content
-                else
-                  != post.content.substring(0, br + 4)
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在调试代码的过程中，学习看错误提示是很重要的：</p>
+<img src="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/1.png" style="zoom: 80%;">
 
-            .post-meta
-              if (post.tags && post.tags.length)
-                .post-tags
-                  != list_tags(post.tags, {show_count: false, class: 'post-tag', style:'none', separator:'/'})
-              if (post.categories && post.categories.length)
-                .post-categories
-                  != list_categories(post.categories, {show_count: false, class: 'post-category', style: 'none', separator: '>'})
+<p>翻译为：应为缩进块。就是在控制格式的时候缩进出了问题</p>
 
-  include _partial/paginator.jade
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/" data-id="ckza4yc4k000734tr0d5jhawd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-回转轮加密法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/" class="article-date">
+  <time datetime="2021-10-03T11:28:49.000Z" itemprop="datePublished">2021-10-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/">回转轮加密法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>回转轮加密法是用电机系统来实现多码交换的方法，即为一种多码加密法，它是用多个回转轮，每个回转轮实现单码加密。这些回转轮可以组合在一起，在每个字母加密后产生一种新的替换模式。<br>回转轮是一个圆盘，它的两面都有电子接点，每个接点代表字母表的一个字母。回转轮内部有连接各接点的电线，这种连接方式定义了单码替换方式。</p>
+<p>回轮转加密分为三部分：加密表、密钥、密文。</p>
+<p>而多码加密法是一种替换加密法，替换模式是：每个明文字母可以密文中的多个字母来代替，而每个密文字母也可以表示多个明文字母。这种加密法可以干扰字母出现频率分析法。具体加密算法有：Vigenere加密法，自动密钥加密法，Nihilist加密法，回转轮加密法等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/" data-id="ckza4yc4m000934trcrm2btkk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-栅栏密码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/" class="article-date">
+  <time datetime="2021-10-02T04:44:11.000Z" itemprop="datePublished">2021-10-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/">栅栏密码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="栅栏密码："><a href="#栅栏密码：" class="headerlink" title="栅栏密码："></a>栅栏密码：</h1><p>把要加密的明文分成N个一组，然后把每组的第1个字连起来，形成一段无规律的话。 不过栅栏密码本身有一个潜规则，就是组成栅栏的字母一般不会太多（一般不超过30个即一、两句话）<br>加密原理：<br>step1：把将要传递的信息中的字母交替排成上下两行<br>step2：将下面一行字母排在上面一行的后面来形成一段密码</p>
+<p>若明文为THE LONGEST DAY MUST HAVE AN END，加密过程为：<br>step1：T E O G S D Y U T A E N N<br>              H L N E T A M S H V A E D<br>step2:   TEOGSDYUTAENN HLNETAMSHVAED</p>
+<p>解密过程为：</p>
+<p>step1：将密文分成两行<br>step2：再按上下上下的顺序组合成一句话</p>
+<h2 id="传统型"><a href="#传统型" class="headerlink" title="传统型"></a>传统型</h2><h2 id="WWW型"><a href="#WWW型" class="headerlink" title="WWW型"></a>WWW型</h2><p>具体见：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qinying001/article/details/96134356">(4条消息) 栅栏密码的变种WWW型_菜的只能随便写写博客-CSDN博客</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/" data-id="ckza4yc4q000d34tr4cx81y7q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-单码加密法和仿射加密法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/" class="article-date">
+  <time datetime="2021-10-01T11:53:47.000Z" itemprop="datePublished">2021-10-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/">单码加密法和仿射加密法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数学基础：</p>
+<p>如求解4关于1模7的乘法逆元为多少？<br>4X≡1 mod 7<br>这个方程等价于求一个X和K，满足<br>4X=7K+1（X和K都是整数）<br>若ax≡1 mod f, 则称a关于1模f的乘法逆元为x。也可表示为ax≡1(mod f)。</p>
+<p>当a与f互素时，a关于模f的乘法逆元有解。如果不互素，则无解。如果f为素数，则从1到f-1的任意数都与f互素，即在1到f-1之间都恰好有一个关于模f的乘法逆元。</p>
+<p>其求法可用欧几里德算法</p>
+<p>又称辗转相除法，是指用于计算两个非负整数a，b的最大公约数。计算公式为gcd(a,b) = gcd(b,a mod b)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span>(<span class="params">a,b</span>):</span></span><br><span class="line">	<span class="keyword">while</span> a != <span class="number">0</span></span><br><span class="line">    	a, b = b%a, a</span><br><span class="line">        <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+
+<p>费马小定理</p>
+<p>如果p是一个质数，而整数a不是p的倍数，则有a^（p-1）≡1（mod p）只不过局限性比较大，要求模数是素数，那么a^(p-2)就是a的乘法逆元</p>
+<p>欧拉定理<br>常用于加密算法中，如仿射算法。</p>
+<p>费马小定理是初等数论四大定理（威尔逊定理，欧拉定理（数论中的欧拉定理），中国剩余定理(又称孙子定理），费马小定理）之一。实际上，它是欧拉定理的一个特殊情况。</p>
+<p>单码加密法：是一种具有固定替换模式的加密法，明文的每一个字母就由密文的一个字母替换。比如：关键词加密法、仿射加密法、多文字加密法等等。</p>
+<p>最早的一个单码加密法是希腊作家Polybius发明的。该加密法称为Polybius方格，因为它将字母表的字母填充在一个正方形中，并给行和列加编号。每个字母由对应的行号和列号来替代。对英语字母表来说，Polybius表格如下所示（由于只有25个位置，所以除去了字母j，这与多码加密法类似）</p>
+<img src="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/1.png" style="zoom:67%;">
+
+<p>（1）关键词加密法</p>
+<p>step1：选择一个关键词，若这个词中出现重复的字母，则去除第一次出现之外的所有相同字母</p>
+<p>step2：将keyword写在字母表的下方，并用字母表中除了关键词之外的其他字母按标准的顺序填写余下的空间,生成密码簿</p>
+<p>例如：</p>
+<p>keyword:visit</p>
+<p>  plaintext:A B C D E F G H  I  J K L M N O P Q  R S T  U V W X Y Z</p>
+<p>ciphertext:V  I  S T A B C D E F G H  J K  L M N O P Q R U W X Y Z</p>
+<p>（2）仿射加密法affine cipher</p>
+<p>单码加密法的另一种形式称为仿射加密法。在仿射加密法中，字母表的字母被赋予一个数字，例如a=0，b=1，c=2…z=25。仿射加密法的密钥为0-25直接的数字对。</p>
+<p>仿射加密法与单码加密法没什么不同，因为明文的每个字母分别只映射到一个密文字母。仿射密码的加密算法就是一个线性变换，即对任意的明文字符x，对应的密文字符为y≡e(x)≡ ax+b(mod26) ，其中，a,b∈Z26，且要求gcd(a,26)=1,函数e(x)称为仿射加密函数。</p>
+<p> 从仿射加密函数的表达式易知，当a=1,b=3时，这种仿射密码就是著名的凯撒密码。</p>
+<p>在求解仿射解密函数时，需要求a在Z26上的乘法逆元a<sup>-1</sup>∈Z26，这可由扩展欧几里得算法求解。</p>
+<p>设仿射加密函数是 e(x) ≡ （11x+6）(mod26)，由上表知：11<sup>-1</sup>mod(26)=19，所以相应的仿射解密函数是 x ≡ （19（e（x）-6））（mod26）。<br>若加密明文是”sorcery”,首先把明文每个字母转换为数字18,14,17,2,4,17,24。然后对明文进行加密，得密文为”welcylk”。</p>
+<p>（3）多文字加密法</p>
+<p>多文字加密法是另一种脆弱的单码加密法，它用一对字母来替代每个明文字母。多文字加密法的密钥是一个5X5的矩阵。这个矩阵的5行和5列用含有5个字母的关键词来标识。该关键词不能有重复的字母。字母表的每一个字母填写在这个矩阵中。当然，矩阵只有25个位置，而字母表有26个字母，因此i和j占同一个单元。即所有j都变成了i。例如：如果关键词为codes，那么密钥矩阵为：</p>
+<p><img src="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/2.png"></p>
+<p>每个明文由标识该字母的行和列的字母对替代。如：密文对od替代成了明文h。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/" data-id="ckza4yc4o000a34tr3hd27puw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-密码学之python的三个库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/" class="article-date">
+  <time datetime="2021-09-22T11:36:48.000Z" itemprop="datePublished">2021-09-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/">密码学之python的三个库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.gmpy2</p>
+<p>是python的一个扩展库</p>
+<p>安装：</p>
+<p>先在cmd中输入wheel检查一下是否安装了wheel文件包，若没有安装，则输入：pip install wheel</p>
+<p>再安装gmpy2所需要的whl文件。点击进入<a target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/%E4%B8%8B%E8%BD%BD%E6%89%80%E9%9C%80%E6%96%87%E4%BB%B6%E6%94%BE%E5%88%B0python%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%B8%8B%E3%80%82">https://www.lfd.uci.edu/~gohlke/pythonlibs/下载所需文件放到python文件目录下。</a></p>
+<p>然后再cmd命令下输入pip install [whl文件的路径]安装whl文件包</p>
+<p>输入pip install gmpy2</p>
+<p>最后用import gmgy2命令测试一下，如果没有报错，说明安装成功。</p>
+<p>注意：使用pip install时，用什么地方弹出的cmd命令行窗口都可以。但如果要对具体的文件进行操作，就该在具体文件所在目录下的顶部输入框中，敲入cmd再执行相关操作。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/" data-id="ckza4yc4p000b34trd4k7ejc7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Caesar Cipher+Vigenère Cipher" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/" class="article-date">
+  <time datetime="2021-09-19T12:11:42.000Z" itemprop="datePublished">2021-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/">Caesar</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>密码学之恺撒密码</p>
+<p>起源</p>
+<p>凯撒密码</p>
+<p>名称：恺撒密码（Caesar cipher）（恺撒加密、恺撒变换、变换加密）</p>
+<p>定义：是一种替换加密的技术。</p>
+<p>规则：明文中的所有字母都在字母表顺序下向后按照一个固定数目进行偏移后被替换成密文。例如，当偏移量是3的时候，所有的字母A将被替换成D。</p>
+<p>用途：被作为其他更复杂的加密方法中的一步，例如维吉尼亚密码。此外，恺撒密码还在ROT13系统中被应用。</p>
+<p>缺点：和所有的利用字母表进行替换的加密技术一样，恺撒密码容易被破解，在实际应用中也无法保证通信安全。</p>
+<p>特定恺撒密码名称：由偏移量的不同划分</p>
+<p>偏移量为10：Avocat(A→K)</p>
+<p>偏移量为13：ROT13</p>
+<p>偏移量为-5：Cassis (K 6)</p>
+<p>偏移量为-6：Cassette (K 7)</p>
+<p>密码破解：</p>
+<p>即使使用唯密文攻击，恺撒密码也是一种容易破解的加密方式。有两种情况：</p>
+<p>（1）攻击者知道（或者猜测）密码中使用了某个简单的替换加密方式，但是不确定是恺撒密码；</p>
+<p>（2）攻击者知道（或者猜测）使用了恺撒密码，但是不知道其偏移量。</p>
+<p>对于第一种情况，攻击者可以通过使用诸如<strong>频率分析</strong>或者<strong>样式单词分析</strong>的方法，马上就能从分析结果中看出规律，得出加密者使用的是恺撒密码。</p>
+<p>而第二种情况更简单。由于使用恺撒密码进行加密的语言一般是<strong>字母系统</strong>，因此密码中可能是使用的偏移量也是有限的，例如使用26个字母的英语，它的偏移量最多就是25（偏移量26等同于偏移量0；偏移量超过26，循环）。因此可以通过穷举法破解。</p>
+<p>例如，被选择出的密文片段是”EXXEGOEXSRGI”。通过在每一个密文单词的每一个字母上面，纵向写出其他字母，然后通过分析，得出其中的某一行便是明文。</p>
+<p>另外一种攻击方法是<strong>频率分析</strong>。当密文长度足够大的情况下，可以先分析密文中每个字母出现的频率，然后将这一频率与该语言字母表中所有字母的出现频率做比较。例如在英语中，正常明文中字母E和T出现的频率特别高，而字母Q和Z出现的频率特别低。可以通过这一特点，分析密文字母出现的频率，可以估计出正确的偏移量。此外，有时还可以将频率分析从字母推广到单词，例如英语中，出现频率最高的单词是：the, of, and, a, to, in…。我们可以通过将最常见的单词的所有可能的25组密文，编组成字典，进行分析。比如QEB可能是the，MPQY可能是单词know（当然也可能是aden）。但是频率分析也有其局限性，它对于<strong>较短或故意省略元音字母或者其他缩写方式</strong>写成的明文加密出来的密文进行解密并不适用。</p>
+<p>另外，通过多次使用恺撒密码来加密并不能获得更大的安全性，因为使用偏移量A加密得到的结果再用偏移量B加密，等同于使用A+B的偏移量进行加密的结果。</p>
+<p>恺撒密码的加密、解密方法还能够通过<strong>同余</strong>的数学方法进行计算。首先将字母用数字代替，A=0，B=1，…，Z=25。此时偏移量为k的加密方法即为：</p>
+<p>​                                                     c =（m+k）mod 26</p>
+<p>同理解密为：                             m =（c-k）  mod  26</p>
+<p>发展</p>
+<p>多表密码</p>
+<p>人们在单一恺撒密码的基础上扩展出多表密码，称为“维吉尼亚”密码，它是由一些偏移量不同的恺撒密码组成。特点是将26个恺撒密表（凯撒密码组成密码字母表）合成一个。维吉尼亚密码引入了“密钥”的概念，即根据密钥来决定用哪一行的密表来进行替换，以此来对抗字频统计。同时初学者通常难以破解，因而又被称为“不可破译的密码”。</p>
+<p>为了生成密码，需要使用表格法。这一表格包括了26行字母表，每一行都由前一行向左偏移一位得到。具体使用哪一行字母表进行编译是基于密钥进行的，在过程中会不断地变换。</p>
+<img src="/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/1.PNG" style="zoom:50%;">
+
+<p>例如，假设明文为：</p>
+<p>ATTACKATDAWN</p>
+<p>选择某一关键词并重复而得到密钥，如关键词为LEMON时，密钥为：</p>
+<p>LEMONLEMONLE</p>
+<p>对于明文的第一个字母A，对应密钥的第一个字母L，于是使用表格中L行字母表进行加密，得到密文第一个字母L。类似地，明文第二个字母为T，在表格中使用对应的E行进行加密，得到密文第二个字母X,以此类推。即为“密钥行，明文列”。</p>
+<p>解密的过程则与加密相反。例如：根据密钥第一个字母L所对应的L行字母表，发现密文第一个字母L位于A列，因而明文第一个字母为A。密钥第二个字母E对应E行字母表，而密文第二个字母X位于此行T列，因而明文第二个字母为T。以此类推便可得到明文。</p>
+<p>用数字0-25代替字母A-Z，维吉尼亚密码的加密文法可以写成同余的形式：</p>
+<p>​                                                  c = （m+k）mod 26</p>
+<p>解密方法则能写成：</p>
+<p>​                                                  m =（c-k） mod  26</p>
+<p>注：</p>
+<p>在密码学中，唯密文攻击是一种攻击模式，指的是在仅知密文的情况下进行攻击。此方案可同时用于攻击对称密码体制和非对称密码体制。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/19/Caesar%20Cipher+Vigen%C3%A8re%20Cipher/" data-id="ckza4yc4b000034trdxznatvx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Crypto之RSA算法入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" class="article-date">
+  <time datetime="2021-09-09T13:44:18.000Z" itemprop="datePublished">2021-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">Crypto之RSA算法入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基础数学知识：</p>
+<p>1.素数：质数，除了1和它本身外不再有其他因数。</p>
+<p>2.合数：与质数相对，除了能被1和本身整除外，还能被其他数（0除外）整除的数。</p>
+<p>另：1既不属于质数也</p>
+<p>约数）（greatest common divisor）为1，即gcd(a,b)=1，那么称a,b两数互质。</p>
+<p>4.<strong>欧拉函数</strong>：对正整数n，欧拉函数是小于n的正整数中与n互质的数的个数记为φ(n)。欧拉函数的值叫做欧拉函数值。</p>
+<p>5.同余定理：给正整数m及两个整数a和b，如果a-b能够被m整除，也就是说m|(a-b)，即(a-b)/m得到一个整数，则称<strong>a与b对模m同余</strong>，记作a≡b(mod m)。对模m同余是整数的一个等价关系。</p>
+<p>6.<strong>模指数运算（用于求解明文）</strong>：即先进行指数运算，再进行取模运算，如：</p>
+<img src="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/1.PNG" style="zoom:50%;">
+
+<p><strong>在Python中给出了相应的处理函数：pow（x，y，z）。</strong>函数是用于计算x的y次方，如果z存在，则再对结果进行取模，其结果等效于pow(x,y)%z</p>
+<p>注：pow() 通过内置的方法直接调用，内置方法会把参数作为整型，而 math 模块则会把参数转换为 float。</p>
+<p>7.扩展欧几里得算法：</p>
+<p>是欧几里得算法（又叫辗转相除法）的扩展。除了计算a、b两个整数的最大公约数，还能找到整数x、y（其中一个很可能是负数）。</p>
+<p>谈到最大公因子时, 有一个事实: 给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by = gcd(a,b)。</p>
+<p>有两个数a,b，对它们进行辗转相除法，可得它们的最大公约数。然后，收集辗转相除法中产生的式子，倒回去，可以得到ax+by=gcd(a,b)的整数解。</p>
+<p>核心的算法定义即：对于不完全为0的非负整数a,b，gcd（a,b）表示a,b的最大公约数，必然存在整数对x,y使得gcd(a,b)=ax+by成立。</p>
+<p>扩展欧几里得的递归实现（C语言）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> &amp;x,<span class="keyword">int</span> &amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>) &#123;    </span><br><span class="line">        x=<span class="number">1</span>; y=<span class="number">0</span>;<span class="comment">//ax = gcd(a, 0) = a</span></span><br><span class="line">        <span class="keyword">return</span> a;  </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">int</span> result=exgcd(b,a%b,x,y); </span><br><span class="line">    <span class="keyword">int</span> t=x; </span><br><span class="line">    x=y; </span><br><span class="line">    y=t-a/b*y; </span><br><span class="line">    <span class="keyword">return</span> result;<span class="comment">//gcd</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注：exgcd是用来求解不定方程、逆元等问题的工具</p>
+<p>可以求解方程ax+by=gcd(a,b) 并返回gcd值</p>
+<p>推导得到对应原来x, y的就是y, x-a/b*y</p>
+<p>扩展欧几里得算法是之后RSA在知晓p、q、e的情况下求解d的主要思维算法。 </p>
+<p>数学推导和代码还没怎么懂，参考(<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34050519/article/details/93307779">https://blog.csdn.net/weixin_34050519/article/details/93307779</a>)</p>
+<p>RSA算法介绍</p>
+<p>是一种非对称密码算法，所谓非对称，就是指该算法需要一对密钥，使用其中一个加密，则需要用另一个才能解密。</p>
+<p>RSA加密解密过程涉及的元素</p>
+<p>N:大整数N，模数</p>
+<p>p和q：两个大质数，是N的两个因子</p>
+<p>c和m：密文和明文</p>
+<p>e和d：加密钥和解密钥</p>
+<p>(N, e)：公钥</p>
+<p>(N, d)：私钥</p>
+<p>RSA公开密钥密码体制的原理</p>
+<p>根据数论，寻求两个大素数比较简单，而将它们的乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥</p>
+<p>RSA算法的具体描述如下： </p>
+<p>（1）任意选取两个不同的大素数p和q计算乘积</p>
+<p>​                                                                    n=pq，φ(n)=（p-1）（q-1）</p>
+<p>（2）任意选取一个大整数e，满足</p>
+<p>​                                                                    gcd（e，φ(n)）=1</p>
+<p> 整数e用做加密钥（注意：e的选取是很容易的，例如，所有大于p和q的素数都可用） ；</p>
+<p>（3）确定的解密钥d，满足</p>
+<p>​                                                                （de）mod φ(n)=1</p>
+<p>​                                                               即de = kφ(n)+1，k&gt;=1 是一个任意的整数</p>
+<p> 所以，若知道e和φ(n)，则很容易计算出d  ；</p>
+<p>（4）公开整数n和e，作为公钥，秘密保存d  ；</p>
+<p>（5）将明文m（m&lt;n是一个整数）加密成密文c，加密算法为 </p>
+<img src="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/2.PNG" style="zoom:80%;">
+
+<p>（6）将密文c解密为明文m，解密算法为 </p>
+<img src="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/3.PNG" style="zoom:80%;">
+
+<p>然而只根据n和e（注意：不是p和q）要计算出d是不可能的。</p>
+<p>因此，任何人都可对明文进行加密，但只有授权用户（知道d）才可对密文解密 。</p>
+<p>针对RSA的攻击方法</p>
+<p>{e,n}为公开密钥，攻击者可以知道。故破解RSA最直接的方法是：分解模数n，计算n=p*q中的p与q的值，之后计算φ(n)=（p-1）（q-1）通过d×e=1mod φ(n)即可求出私钥d,之后使用{d，n}即可得出加密之前的明文。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" data-id="ckza4yc4f000134tr2tv1cgr6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-新手题（续）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/" class="article-date">
+  <time datetime="2021-09-08T07:37:17.000Z" itemprop="datePublished">2021-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/">新手题（续）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这次是crypto的新手题</p>
+<h1 id="001-base64"><a href="#001-base64" class="headerlink" title="001 base64"></a>001 base64</h1><p>题目描述：元宵节灯谜是一种古老的传统民间观灯猜谜的习俗。 因为谜语能启迪智慧又饶有兴趣，灯谜增添节日气氛，是一项很有趣的活动。 你也很喜欢这个游戏，这不，今年元宵节，心里有个黑客梦的你，约上你青梅竹马的好伙伴小鱼， 来到了cyberpeace的攻防世界猜谜大会，也想着一展身手。 你们一起来到了小孩子叽叽喳喳吵吵闹闹的地方，你俩抬头一看，上面的大红灯笼上写着一些奇奇怪怪的 字符串，小鱼正纳闷呢，你神秘一笑，我知道这是什么了。</p>
+<p>打开附件为一串字符，包括大小写字母、数字</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/1.PNG" style="zoom: 67%;">
+
+<p>根据题目所提示的base64，使用极客类——在线工具，直接Base64-Decode，得flag</p>
+<p>cyberpeace{Welcome_to_new_World!}</p>
+<p><strong>！！base64特征</strong></p>
+<h1 id="002-Caesar"><a href="#002-Caesar" class="headerlink" title="002 Caesar"></a>002 Caesar</h1><p>题目描述：你成功的解出了来了灯谜，小鱼一脸的意想不到“没想到你懂得这么多啊！” 你心里面有点小得意，“那可不是，论学习我没你成绩好轮别的我知道的可不比你少，走我们去看看下一个” 你们继续走，看到前面也是热热闹闹的，同样的大红灯笼高高挂起，旁边呢好多人叽叽喳喳说个不停。你一看 大灯笼，上面还是一对字符，你正冥思苦想呢，小鱼神秘一笑，对你说道，我知道这个的答案是什么了</p>
+<p>打开附件为一串字符，包括小写字母、flag形式{}、_</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/2.PNG" style="zoom: 67%;">
+
+<p>根据题目可知这是凯撒密码，联系001，flag的格式为cyberpeace{}，于是采取一一对应原则</p>
+<p>将 oknqdbqmoq 和 cyberpeace 比对，发现字母偏移12位</p>
+<p>故使用<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/kaisamima.php">凯撒密码在线工具</a>解密可得flag</p>
+<p>注：此在线软件只能在已知位移的时候使用</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/3.PNG"></p>
+<h1 id="003-morse"><a href="#003-morse" class="headerlink" title="003 morse"></a>003 morse</h1><p>题目描述：小鱼得意的瞟了你一眼，神神气气的拿走了答对谜语的奖励，你心里暗暗较劲 想着下一个谜题一定要比小鱼更快的解出来。不知不觉你们走到了下一个谜题的地方，这个地方有些奇怪。 上面没什么提示信息，只是刻着一些0和1，感觉有着一些奇怪的规律，你觉得有些熟悉，但是就是想不起来 这些01代表着什么意思。一旁的小鱼看你眉头紧锁的样子，扑哧一笑，对你讲“不好意思我又猜到答案了。”(flag格式为cyberpeace{xxxxxxxxxx},均为小写)</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/4.png"></p>
+<p>根据题目提示Morse想到摩斯密码 1变为“-”   0变为“.” 改为标准莫斯密码:</p>
+<p>– — .-. … . -.-. — -.. . .. … … — .. -. - . .-. . … - .. -. –.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">c_table = [<span class="string">&quot;.-&quot;</span>, <span class="string">&quot;A&quot;</span>, <span class="string">&quot;-...&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;-.-.&quot;</span>, <span class="string">&quot;C&quot;</span>, <span class="string">&quot;-..&quot;</span>, <span class="string">&quot;D&quot;</span>,</span><br><span class="line">           <span class="string">&quot;.&quot;</span>, <span class="string">&quot;E&quot;</span>, <span class="string">&quot;..-.&quot;</span>, <span class="string">&quot;F&quot;</span>, <span class="string">&quot;--.&quot;</span>, <span class="string">&quot;G&quot;</span>, <span class="string">&quot;....&quot;</span>, <span class="string">&quot;H&quot;</span>,</span><br><span class="line">           <span class="string">&quot;..&quot;</span>, <span class="string">&quot;I&quot;</span>, <span class="string">&quot;.---&quot;</span>, <span class="string">&quot;J&quot;</span>, <span class="string">&quot;-.-&quot;</span>, <span class="string">&quot;K&quot;</span>, <span class="string">&quot;.-..&quot;</span>, <span class="string">&quot;L&quot;</span>,</span><br><span class="line">           <span class="string">&quot;--&quot;</span>, <span class="string">&quot;M&quot;</span>, <span class="string">&quot;-.&quot;</span>, <span class="string">&quot;N&quot;</span>, <span class="string">&quot;---&quot;</span>, <span class="string">&quot;O&quot;</span>, <span class="string">&quot;.--.&quot;</span>, <span class="string">&quot;P&quot;</span>,</span><br><span class="line">           <span class="string">&quot;--.-&quot;</span>, <span class="string">&quot;Q&quot;</span>, <span class="string">&quot;.-.&quot;</span>, <span class="string">&quot;R&quot;</span>, <span class="string">&quot;...&quot;</span>, <span class="string">&quot;S&quot;</span>, <span class="string">&quot;-&quot;</span>, <span class="string">&quot;T&quot;</span>,</span><br><span class="line">           <span class="string">&quot;..-&quot;</span>, <span class="string">&quot;U&quot;</span>, <span class="string">&quot;...-&quot;</span>, <span class="string">&quot;V&quot;</span>, <span class="string">&quot;.--&quot;</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;-..-&quot;</span>, <span class="string">&quot;X&quot;</span>,</span><br><span class="line">           <span class="string">&quot;-.--&quot;</span>, <span class="string">&quot;Y&quot;</span>, <span class="string">&quot;--..&quot;</span>, <span class="string">&quot;Z&quot;</span>, <span class="string">&quot;.----&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;..---&quot;</span>,<span class="string">&quot;2&quot;</span>,</span><br><span class="line">           <span class="string">&quot;...--&quot;</span>, <span class="string">&quot;3&quot;</span>, <span class="string">&quot;....-&quot;</span>, <span class="string">&quot;4&quot;</span>, <span class="string">&quot;.....&quot;</span>, <span class="string">&quot;5&quot;</span>, <span class="string">&quot;-....&quot;</span>, <span class="string">&quot;6&quot;</span>,</span><br><span class="line">           <span class="string">&quot;--...&quot;</span>, <span class="string">&quot;7&quot;</span>, <span class="string">&quot;---..&quot;</span>, <span class="string">&quot;8&quot;</span>, <span class="string">&quot;----.&quot;</span>, <span class="string">&quot;9&quot;</span>, <span class="string">&quot;-----&quot;</span>, <span class="string">&quot;0&quot;</span>]</span><br><span class="line">code=<span class="built_in">input</span>(<span class="string">&quot;请输入摩斯密码： &quot;</span>)</span><br><span class="line">split_code = code.split(<span class="string">&quot; &quot;</span>)</span><br><span class="line">result = [c_table[c_table.index(each) + <span class="number">1</span>] <span class="keyword">for</span> each <span class="keyword">in</span> split_code]</span><br><span class="line">print(result)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>解密得：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/5.png" style="zoom:67%;">
+
+<h1 id="006-不仅仅是Morse"><a href="#006-不仅仅是Morse" class="headerlink" title="006 不仅仅是Morse"></a>006 不仅仅是Morse</h1><p>题目描述：“这个题目和我们刚刚做的那个好像啊但是为什么按照刚刚的方法做出来答案却不对呢” ，你奇怪的问了问小鱼，“可能是因为还有一些奇怪的加密方式在里面吧，我们在仔细观察观察”。两个人 安安静静的坐下来开始思考，很耐心的把自己可以想到的加密方式一种种的过了一遍，十多分钟后两个人 异口同声的说“我想到了！”。一种食物,格式为cyberpeace{小写的你解出的答案}</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/6.png" style="zoom:67%;">
+
+<p>以Morse形式出现而且很长,即使已经知道了不只是用这种加密方法仍需要先按照Morse解密，获得更多的信息</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/7.png" style="zoom:67%;">    
+
+<p>显示出还需要另一层解密方式，并且跟着一大串的AB，利用培根密码加解密：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/8.png" style="zoom:67%;">
+
+
+
+<h1 id="004-幂数加密"><a href="#004-幂数加密" class="headerlink" title="004 幂数加密"></a>004 幂数加密</h1><p>题目描述：你和小鱼终于走到了最后的一个谜题所在的地方，上面写着一段话“亲爱的朋友， 很开心你对网络安全有这么大的兴趣，希望你一直坚持下去，不要放弃 ，学到一些知识， 走进广阔的安全大世界”，你和小鱼接过谜题，开始了耐心细致的解答。flag为cyberpeace{你解答出的八位大写字母}</p>
+<p>打开附件，出现一串数字：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/9.png" style="zoom:67%;">
+
+<p>由题目信息：幂数加密。但出现出现了数字8，故不是二进制幂数加密法。发现只有0、1、2、4、8五个数字，故为云影密码。解密如下图：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/10.png" style="zoom:67%;">
+
+<h1 id="005-Railfence"><a href="#005-Railfence" class="headerlink" title="005 Railfence"></a>005 Railfence</h1><p>题目描述：被小鱼一连将了两军，你心里更加不服气了。两个人一起继续往前走， 一路上杂耍卖艺的很多，但是你俩毫无兴趣，直直的就冲着下一个谜题的地方去了。 到了一看，这个谜面看起来就已经有点像答案了样子了，旁边还画着一张画，是一副农家小院的 图画，上面画着一个农妇在栅栏里面喂5只小鸡，你嘿嘿一笑对着小鱼说这次可是我先找到答案了。</p>
+<p>打开附件：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/3-16331487738831.png" style="zoom:67%;">
+
+<p>由题目中所给出的提示信息：五只小鸡说明解密的key为5</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/11.png" style="zoom: 50%;">
+
+<h1 id="007混合编码"><a href="#007混合编码" class="headerlink" title="007混合编码"></a>007混合编码</h1><p>题目描述：经过了前面那么多题目的历练，耐心细致在解题当中是 必不可少的品质，刚巧你们都有，你和小鱼越来越入迷。那么走向了下一个题目，这个题目好长 好长，你知道你们只要细心细致，答案总会被你们做出来的，你们开始慢慢的尝试，慢慢的猜想 ，功夫不负有心人，在你们耐心的一步步的解答下，答案跃然纸上，你俩默契一笑，相视击掌 走向了下面的挑战。格式为cyberpeace{小写的你解出的答案}</p>
+<p>打开附件：</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/12.png"></p>
+<p>真的很长，由大小写字母、数字、=构成而且由==结尾，想到base64</p>
+<p>解密后出现：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/13.png" style="zoom:50%;">
+
+<p>新的密文由“&amp; # +数字”构成，初步判断为html实体（在html中某些字符是预留的，为了正确地显示预留字符，故在html源代码中使用字符实体html entity，它类似：&amp;entity_name；或者&amp;#entity_number；而如果需要显示小于号，就需要这样写：&amp;lt；或&amp;#60；）</p>
+<p>解码得：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/14.png" style="zoom:50%;">
+
+<p>新的密文又是由大小写字母、数字组成，看到一串字符串先判断是否为16进制（最大的字母有没有超过F），若超过则试试base64：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/15.png" style="zoom:50%;">
+
+<p>得到一串数字而且有大量的/</p>
+<p>而且每组数字都没有大于124，故判断为ascll码，于是利用python将ascll码转为字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">119</span>,<span class="number">101</span>,<span class="number">108</span>,<span class="number">99</span>,<span class="number">111</span>,<span class="number">109</span>,<span class="number">101</span>,<span class="number">116</span>,<span class="number">111</span>,<span class="number">97</span>,<span class="number">116</span>,<span class="number">116</span>,<span class="number">97</span>,<span class="number">99</span>,<span class="number">107</span>,<span class="number">97</span>,<span class="number">110</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">101</span>,<span class="number">102</span>,<span class="number">101</span>,<span class="number">110</span>,<span class="number">99</span>,<span class="number">101</span>,<span class="number">119</span>,<span class="number">111</span>,<span class="number">114</span>,<span class="number">108</span>,<span class="number">100</span>]</span><br><span class="line"><span class="string">&#x27;&#x27;</span>.join(<span class="built_in">chr</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> a)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下：<br><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/16.png" style="zoom:67%;"></p>
+<h1 id="008easy-RSA"><a href="#008easy-RSA" class="headerlink" title="008easy_RSA"></a>008easy_RSA</h1><p>题目描述：解答出来了上一个题目的你现在可是春风得意，你们走向了下一个题目所处的地方 你一看这个题目傻眼了，这明明是一个数学题啊！！！可是你的数学并不好。扭头看向小鱼，小鱼哈哈一笑 ，让你在学校里面不好好听讲现在傻眼了吧~来我来！三下五除二，小鱼便把这个题目轻轻松松的搞定了。flag格式为cyberpeace{小写的你解出的答案}</p>
+<p>打开附件：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/17.png" style="zoom: 67%;">
+
+<p>由（de）mod φ(n)=1即d×e=1mod φ(n)</p>
+<p>利用如下脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">p=gmpy2.mpz(<span class="number">473398607161</span>)</span><br><span class="line">q=gmpy2.mpz(<span class="number">4511491</span>)</span><br><span class="line">e=gmpy2.mpz(<span class="number">17</span>)</span><br><span class="line">phi_n= (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi_n)</span><br><span class="line">print(<span class="string">&quot;d is:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> (d)</span><br></pre></td></tr></table></figure>
+
+<p>得到：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/18.png" style="zoom:67%;">
+
+<p>其中：</p>
+<p>1&gt; gmpy2用法见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42250840/article/details/105153227">(4条消息) gmpy2—一些用法_Matrix_Ceasor的博客-CSDN博客_gmpy2</a></p>
+<p>2&gt; 希腊字母的字体变种在数学中有特定的意思，例如：φ（phi）</p>
+<h1 id="009easychallenge"><a href="#009easychallenge" class="headerlink" title="009easychallenge"></a>009easychallenge</h1><p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/hippotomons/article/details/102538110">(4条消息) CTF密码学(crypto)题目easychallenge解题过程总结_hippotomons的博客-CSDN博客_easychallenge</a></p>
+<p>题目描述：你们走到了一个冷冷清清的谜题前面，小鱼看着题目给的信息束手无策，丈二和尚摸不着头脑 ，你嘿嘿一笑，拿出来了你随身带着的笔记本电脑，噼里啪啦的敲起来了键盘，清晰的函数逻辑和流程出现在 了电脑屏幕上，你敲敲键盘，更改了几处地方，运行以后答案变出现在了电脑屏幕上。</p>
+<p>附件是一个.pyc文件（pyc是一种二进制文件。Python的程序中，是把原始程序代码放在.py文件里，而Python会在执行.py文件的时候，将.py形式的程序编译成中间式文件的.pyc文件，这么做的目的是为了加快下次执行文件的速度。所以，在运行python文件的时候，就会自动首先查看是否具有.pyc文件，如果有的话，而且.py文件的修改时间和.pyc的修改时间一样，就会读取.pyc文件，否则，Python就会读原来的.py文件。而并不是所有的.py文件在与运行的时候都会产生.pyc文件，只有在import相应的.py文件的时候，才会生成相应的.pyc文件。此外，把.py文件编译为.pyc文件，从而可以实现部分的源码隐藏，保证了安全性）</p>
+<p>第一反映是想要用一些软件尝试打开它，结果发现不行，故应该要将.pyc文件反编译回.py文件。而uncompyle6是个第三方python反编译器，可将python字节码转换回等效的python源代码，安装如下：</p>
+<p>step1：cmd进入命令行窗口，输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install uncompyle6</span><br></pre></td></tr></table></figure>
+
+<p>step2：找到需要反编译的pyc文件，在放置.pyc文件的新目录下的顶部输入框中输入cmd启动命令行窗口，然后再输入uncompyle6 .pyc &gt; .py并按下Enter键：</p>
+<p>就会在放pyc文件的目录下出现py文件了</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/19.png" style="zoom: 80%;">
+
+<p>得到的源码如下：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/20.png" style="zoom:50%;">
+
+<p>没想很多，先运行了一下，发现print报错</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/21.png" style="zoom:67%;">
+了解后发现这处错误是由于python2和python3版本不兼容造成的，加上括号后再次运行
+
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/22.png" style="zoom:67%;">
+
+<p>出现了flag = raw_input()报错，也是版本不兼容引起的</p>
+<p>去掉raw_改后运行发现是需要输入一个flag值</p>
+<p>于是看代码，它要求用户输入一个flag值，然后依次通过三个函数进行加密，再将加密后的结果与代码给定的final值进行比较，如果相等输出correct，如果不相等，输出wrong</p>
+<p>所以，出题者就是让我们根据这个加密运算过程，写出逆过程，将final值作为输入值，然后以与之前相反的顺序调用函数，最后输出的值就是flag</p>
+<p>其中三层加密具体为：</p>
+<p>第一层是每个字符先异或36再加上25（^表示转化为二进制数再异或）</p>
+<p>第二层是每个字符先加上36再异或36</p>
+<p>第三层是一个base32编码，调用base64库里的b32encode()函数进行base32运算</p>
+<p>又根据final结尾的三个”=”以及均为数字和大写字母，可以看出是base32加密</p>
+<p>开始修改原代码：</p>
+<p>把进入函数的顺序改成先进函数3再进2最后进1</p>
+<p>对每个函数内部运算进行修改（而异或运算的逆过程就是再做一次异或，所以不变）base64.b32encode()改成base64.32decode()</p>
+<p>调整语句顺序，同时也要按照代码逻辑，把i和x给相互换一下，不然会出错</p>
+<p>改完是这样的：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/23.png" style="zoom: 67%;">
+
+<p>运行后，报错！！</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/24.png"></p>
+<p>补充：</p>
+<p>encode – 字符型变量转换为数值型变量</p>
+<p>decode – 数值型变量转换为字符型变量</p>
+<p>好麻烦[哭]</p>
+<p>用不是自己写的代码看一下结果：<br><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/25.png" style="zoom:67%;"></p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/26.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/" data-id="ckza4yc4r000e34trh6y91eyn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-解题部分工具总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2021-09-07T07:38:28.000Z" itemprop="datePublished">2021-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/">解题部分工具总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>工具：</p>
+<p>（1）与佛论禅：<a target="_blank" rel="noopener" href="http://www.keyfc.net/bbs/tools/tudoucode.aspx">http://www.keyfc.net/bbs/tools/tudoucode.aspx</a>  </p>
+<p>出现禅语时使用，其中”普度众生”为网站的使用说明</p>
+<p>（2）rot-13：<a target="_blank" rel="noopener" href="https://rot13.com/">https://rot13.com/</a></p>
+<p>rot-13使用替换加密算法，使用后所有英文字母由后13位字母代替，是凯撒密码加密演算法的特例。</p>
+<p>故加密后只有字母受到影响，数字、符号、空格等所有其他形式的字符都不变。</p>
+<p>A B  C D E F G H  I   J  K L M</p>
+<p>N O P Q R S T  U V W X Y  Z</p>
+<p>因有26个英文字母，并且26=2×13，故rot13函数是它自己的逆反。</p>
+<p>（3）Base64：打开”在线工具”，选’’极客类’’，点击’’文字加密解密’’</p>
+<img src="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/1.PNG" style="zoom:67%;">
+
+<p>Base64是网络上最常见的用于传输8Bit字节码的编码方式之一，是一种基于64个可打印ASCII字符（A-Z、a-z、0-9、+、/）来表示二进制数据的方法。</p>
+<p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3×8 = 4×6 = 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。故Base64编码具有不可读性，需要解码。</p>
+<p>它是从二进制到字符的过程，将任意字节序列数据编码成ASCII字符串,可用于在HTTP环境下传递较长的标识信息。</p>
+<p>base64编码是通过待加密字符的ASCII码值的八位二进制进行按6位划分，得到新的二进制，转化为十进制后，根据base64编码表进行匹配字符，得到密文。</p>
+<p>Base64的特征：字符串的长度为4的整数倍；字符串的符号取值只能在A-Z, a-z, 0-9, +, /, =共计65个字符中，且=如果出现就必须在结尾出现。</p>
+<p>（4）Base32：</p>
+<p>Base32编码是使用32个可打印字符(字母A-Z和数字2-7)对任意字节数据进行编码的方案,编码后的字符串不用区分大小。</p>
+<p>Base32将任意字符串按照字节进行切分，并将每个字节对应的二进制值（不足8比特高位补0）串联起来，从左侧开始按照5比特一组进行切分。若不足5比特，则在末尾填充0直到5比特，并将每组二进制值转换成十进制来对应32个可打印字符中的一个。由于数据的二进制传输是按照8比特一组进行（即一个字节），因此Base32按5比特切分的二进制数据必须是40比特的倍数（5和8的最小公倍数）。</p>
+<p>若还不足40比特，比如只用到两组5比特共10比特，还差30比特达到40比特，按照5比特一组还需6组，则在末尾填充6个“=”。填充“=”符号的作用是方便一些程序的标准化运行。而在URL中使用时必须去掉“=”符号。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/" data-id="ckza4yc4s000g34trgplh87au" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-攻防世界misc——新手练习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/" class="article-date">
+  <time datetime="2021-09-05T12:11:03.000Z" itemprop="datePublished">2021-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/">攻防世界misc——新手练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>001</p>
+<p>Most flags are in the form flag{xxx}, for example:flag{th1s_!s_a_d4m0_4la9}</p>
+<p>002 图片隐写</p>
+<p>题目描述：菜猫给了菜狗一张图，说图下面什么都没有</p>
+<p>题中给出pdf文件。打开后，单单从图片上看什么也没发现。</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/1.PNG" style="zoom:50%;">
+
+<p>解1：移动鼠标发现在图片眼睛位置鼠标形状改变，说明文字出现，直接全选（ctrl+a）复制得到flag</p>
+<p>解2：尝试修改为txt文件，重命名强行改变，查找不到flag，重命名导致了文件不可用</p>
+<p>解3：由题中所给的提示“图下”，直接删除图片，显示flag</p>
+<p>003</p>
+<p>题目描述：菜狗为了打败菜猫，学了一套如来十三掌。</p>
+<p>题中所给的附件打开为word文档，文字内容为禅语。</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/2.PNG" style="zoom: 50%;">
+
+<p>故应该用“与佛论禅网站”解密</p>
+<p>原文放在下框中，点击“参悟佛所言的真意”，得到解码后的内容</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/3.PNG" style="zoom:50%;">
+
+<p>得到的字符串仍是加密过的，接着根据题目提示的“如来十三掌”，使用”rot-13工具”再一次进行解码</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/4.PNG" style="zoom:50%;">
+
+<p>解密后的这串字符有大小写字母、数字，同时长度还是4的倍数，故怀疑为base64加密</p>
+<p>最后使用base64解密，最终得到flag</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/6.PNG" style="zoom:50%;">
+
+
+
+<p>004 图片隐写</p>
+<p>题目描述：菜狗找到了文件中的彩蛋很开心，给菜猫发了个表情包</p>
+<p>打开附件出现了一张gif动图。完整浏览后发现在动图较后的部分出现了一张二维码，在50帧处截图下来</p>
+<p><img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/7.png"></p>
+<p>发现上图二维码存在缺漏，发现缺少了三个小方块即定位点，故想补全此二维码</p>
+<p>在网上找一张完整二维码的图片，用wps打开裁剪出定位点，复制后补全二维码(方块不可太大，防止覆盖其他部分)</p>
+<img src="/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/8.PNG" style="zoom: 33%;">
+
+<p>扫描二维码后，得到flag</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/05/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cmisc%E2%80%94%E2%80%94%E6%96%B0%E6%89%8B%E7%BB%83%E4%B9%A0/" data-id="ckza4yc4q000c34tr1y111hsg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/">python错误提示</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/">回转轮加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/">栅栏密码</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/">单码加密法和仿射加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/">密码学之python的三个库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,40 +1,374 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
 
-block title
-  title= page.title + " | " + config.title
+  
+  <title>新手题（续） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这次是crypto的新手题 001 base64题目描述：元宵节灯谜是一种古老的传统民间观灯猜谜的习俗。 因为谜语能启迪智慧又饶有兴趣，灯谜增添节日气氛，是一项很有趣的活动。 你也很喜欢这个游戏，这不，今年元宵节，心里有个黑客梦的你，约上你青梅竹马的好伙伴小鱼， 来到了cyberpeace的攻防世界猜谜大会，也想着一展身手。 你们一起来到了小孩子叽叽喳喳吵吵闹闹的地方，你俩抬头一看，上面的大红灯笼">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新手题（续）">
+<meta property="og:url" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这次是crypto的新手题 001 base64题目描述：元宵节灯谜是一种古老的传统民间观灯猜谜的习俗。 因为谜语能启迪智慧又饶有兴趣，灯谜增添节日气氛，是一项很有趣的活动。 你也很喜欢这个游戏，这不，今年元宵节，心里有个黑客梦的你，约上你青梅竹马的好伙伴小鱼， 来到了cyberpeace的攻防世界猜谜大会，也想着一展身手。 你们一起来到了小孩子叽叽喳喳吵吵闹闹的地方，你俩抬头一看，上面的大红灯笼">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/1.PNG">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/2.PNG">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/3.PNG">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/4.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/5.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/6.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/7.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/8.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/9.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/10.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/3-16331487738831.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/11.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/12.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/13.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/14.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/15.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/16.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/17.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/18.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/19.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/20.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/21.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/22.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/23.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/24.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/25.png">
+<meta property="og:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/26.png">
+<meta property="article:published_time" content="2021-09-08T07:37:17.000Z">
+<meta property="article:modified_time" content="2021-10-03T09:37:24.979Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/1.PNG">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-block main
+<meta name="generator" content="Hexo 5.2.0"></head>
 
-  // gallery that comes before the header
-  if page.photos
-     if page.photos.length
-      .article-gallery
-        .article-gallery-photos.container
-          for photo in page.photos
-            a.article-gallery-img.fancybox(href=url_for(photo), rel="gallery_" + page._id)
-              img(src=url_for(photo), itemprop="image")
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-新手题（续）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/" class="article-date">
+  <time datetime="2021-09-08T07:37:17.000Z" itemprop="datePublished">2021-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      新手题（续）
+    </h1>
+  
 
-  .wrapper
-    .container.post-header
-      h1: = page.title
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这次是crypto的新手题</p>
+<h1 id="001-base64"><a href="#001-base64" class="headerlink" title="001 base64"></a>001 base64</h1><p>题目描述：元宵节灯谜是一种古老的传统民间观灯猜谜的习俗。 因为谜语能启迪智慧又饶有兴趣，灯谜增添节日气氛，是一项很有趣的活动。 你也很喜欢这个游戏，这不，今年元宵节，心里有个黑客梦的你，约上你青梅竹马的好伙伴小鱼， 来到了cyberpeace的攻防世界猜谜大会，也想着一展身手。 你们一起来到了小孩子叽叽喳喳吵吵闹闹的地方，你俩抬头一看，上面的大红灯笼上写着一些奇奇怪怪的 字符串，小鱼正纳闷呢，你神秘一笑，我知道这是什么了。</p>
+<p>打开附件为一串字符，包括大小写字母、数字</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/1.PNG" style="zoom: 67%;">
 
-  .wrapper
-    .container.meta
-      .post-time= page.date.format(config.date_format)
-      if (page.categories && page.categories.length)
-        .post-categories
-          != list_categories(page.categories, {show_count: false, class: 'post-category', style: 'none', separator: '>'})
-      if (page.tags && page.tags.length)
-        .post-tags
-          != list_tags(page.tags, {show_count: false, class: 'post-tag', style:'none', separator:'/'})
+<p>根据题目所提示的base64，使用极客类——在线工具，直接Base64-Decode，得flag</p>
+<p>cyberpeace{Welcome_to_new_World!}</p>
+<p><strong>！！base64特征</strong></p>
+<h1 id="002-Caesar"><a href="#002-Caesar" class="headerlink" title="002 Caesar"></a>002 Caesar</h1><p>题目描述：你成功的解出了来了灯谜，小鱼一脸的意想不到“没想到你懂得这么多啊！” 你心里面有点小得意，“那可不是，论学习我没你成绩好轮别的我知道的可不比你少，走我们去看看下一个” 你们继续走，看到前面也是热热闹闹的，同样的大红灯笼高高挂起，旁边呢好多人叽叽喳喳说个不停。你一看 大灯笼，上面还是一对字符，你正冥思苦想呢，小鱼神秘一笑，对你说道，我知道这个的答案是什么了</p>
+<p>打开附件为一串字符，包括小写字母、flag形式{}、_</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/2.PNG" style="zoom: 67%;">
+
+<p>根据题目可知这是凯撒密码，联系001，flag的格式为cyberpeace{}，于是采取一一对应原则</p>
+<p>将 oknqdbqmoq 和 cyberpeace 比对，发现字母偏移12位</p>
+<p>故使用<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/kaisamima.php">凯撒密码在线工具</a>解密可得flag</p>
+<p>注：此在线软件只能在已知位移的时候使用</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/3.PNG"></p>
+<h1 id="003-morse"><a href="#003-morse" class="headerlink" title="003 morse"></a>003 morse</h1><p>题目描述：小鱼得意的瞟了你一眼，神神气气的拿走了答对谜语的奖励，你心里暗暗较劲 想着下一个谜题一定要比小鱼更快的解出来。不知不觉你们走到了下一个谜题的地方，这个地方有些奇怪。 上面没什么提示信息，只是刻着一些0和1，感觉有着一些奇怪的规律，你觉得有些熟悉，但是就是想不起来 这些01代表着什么意思。一旁的小鱼看你眉头紧锁的样子，扑哧一笑，对你讲“不好意思我又猜到答案了。”(flag格式为cyberpeace{xxxxxxxxxx},均为小写)</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/4.png"></p>
+<p>根据题目提示Morse想到摩斯密码 1变为“-”   0变为“.” 改为标准莫斯密码:</p>
+<p>– — .-. … . -.-. — -.. . .. … … — .. -. - . .-. . … - .. -. –.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">c_table = [<span class="string">&quot;.-&quot;</span>, <span class="string">&quot;A&quot;</span>, <span class="string">&quot;-...&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;-.-.&quot;</span>, <span class="string">&quot;C&quot;</span>, <span class="string">&quot;-..&quot;</span>, <span class="string">&quot;D&quot;</span>,</span><br><span class="line">           <span class="string">&quot;.&quot;</span>, <span class="string">&quot;E&quot;</span>, <span class="string">&quot;..-.&quot;</span>, <span class="string">&quot;F&quot;</span>, <span class="string">&quot;--.&quot;</span>, <span class="string">&quot;G&quot;</span>, <span class="string">&quot;....&quot;</span>, <span class="string">&quot;H&quot;</span>,</span><br><span class="line">           <span class="string">&quot;..&quot;</span>, <span class="string">&quot;I&quot;</span>, <span class="string">&quot;.---&quot;</span>, <span class="string">&quot;J&quot;</span>, <span class="string">&quot;-.-&quot;</span>, <span class="string">&quot;K&quot;</span>, <span class="string">&quot;.-..&quot;</span>, <span class="string">&quot;L&quot;</span>,</span><br><span class="line">           <span class="string">&quot;--&quot;</span>, <span class="string">&quot;M&quot;</span>, <span class="string">&quot;-.&quot;</span>, <span class="string">&quot;N&quot;</span>, <span class="string">&quot;---&quot;</span>, <span class="string">&quot;O&quot;</span>, <span class="string">&quot;.--.&quot;</span>, <span class="string">&quot;P&quot;</span>,</span><br><span class="line">           <span class="string">&quot;--.-&quot;</span>, <span class="string">&quot;Q&quot;</span>, <span class="string">&quot;.-.&quot;</span>, <span class="string">&quot;R&quot;</span>, <span class="string">&quot;...&quot;</span>, <span class="string">&quot;S&quot;</span>, <span class="string">&quot;-&quot;</span>, <span class="string">&quot;T&quot;</span>,</span><br><span class="line">           <span class="string">&quot;..-&quot;</span>, <span class="string">&quot;U&quot;</span>, <span class="string">&quot;...-&quot;</span>, <span class="string">&quot;V&quot;</span>, <span class="string">&quot;.--&quot;</span>, <span class="string">&quot;W&quot;</span>, <span class="string">&quot;-..-&quot;</span>, <span class="string">&quot;X&quot;</span>,</span><br><span class="line">           <span class="string">&quot;-.--&quot;</span>, <span class="string">&quot;Y&quot;</span>, <span class="string">&quot;--..&quot;</span>, <span class="string">&quot;Z&quot;</span>, <span class="string">&quot;.----&quot;</span>, <span class="string">&quot;1&quot;</span>, <span class="string">&quot;..---&quot;</span>,<span class="string">&quot;2&quot;</span>,</span><br><span class="line">           <span class="string">&quot;...--&quot;</span>, <span class="string">&quot;3&quot;</span>, <span class="string">&quot;....-&quot;</span>, <span class="string">&quot;4&quot;</span>, <span class="string">&quot;.....&quot;</span>, <span class="string">&quot;5&quot;</span>, <span class="string">&quot;-....&quot;</span>, <span class="string">&quot;6&quot;</span>,</span><br><span class="line">           <span class="string">&quot;--...&quot;</span>, <span class="string">&quot;7&quot;</span>, <span class="string">&quot;---..&quot;</span>, <span class="string">&quot;8&quot;</span>, <span class="string">&quot;----.&quot;</span>, <span class="string">&quot;9&quot;</span>, <span class="string">&quot;-----&quot;</span>, <span class="string">&quot;0&quot;</span>]</span><br><span class="line">code=<span class="built_in">input</span>(<span class="string">&quot;请输入摩斯密码： &quot;</span>)</span><br><span class="line">split_code = code.split(<span class="string">&quot; &quot;</span>)</span><br><span class="line">result = [c_table[c_table.index(each) + <span class="number">1</span>] <span class="keyword">for</span> each <span class="keyword">in</span> split_code]</span><br><span class="line">print(result)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>解密得：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/5.png" style="zoom:67%;">
+
+<h1 id="006-不仅仅是Morse"><a href="#006-不仅仅是Morse" class="headerlink" title="006 不仅仅是Morse"></a>006 不仅仅是Morse</h1><p>题目描述：“这个题目和我们刚刚做的那个好像啊但是为什么按照刚刚的方法做出来答案却不对呢” ，你奇怪的问了问小鱼，“可能是因为还有一些奇怪的加密方式在里面吧，我们在仔细观察观察”。两个人 安安静静的坐下来开始思考，很耐心的把自己可以想到的加密方式一种种的过了一遍，十多分钟后两个人 异口同声的说“我想到了！”。一种食物,格式为cyberpeace{小写的你解出的答案}</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/6.png" style="zoom:67%;">
+
+<p>以Morse形式出现而且很长,即使已经知道了不只是用这种加密方法仍需要先按照Morse解密，获得更多的信息</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/7.png" style="zoom:67%;">    
+
+<p>显示出还需要另一层解密方式，并且跟着一大串的AB，利用培根密码加解密：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/8.png" style="zoom:67%;">
 
 
-  article
-    .container.post
-      != page.content
 
-    // comment system
-    .container
-      hr
-      include _partial/comments
+<h1 id="004-幂数加密"><a href="#004-幂数加密" class="headerlink" title="004 幂数加密"></a>004 幂数加密</h1><p>题目描述：你和小鱼终于走到了最后的一个谜题所在的地方，上面写着一段话“亲爱的朋友， 很开心你对网络安全有这么大的兴趣，希望你一直坚持下去，不要放弃 ，学到一些知识， 走进广阔的安全大世界”，你和小鱼接过谜题，开始了耐心细致的解答。flag为cyberpeace{你解答出的八位大写字母}</p>
+<p>打开附件，出现一串数字：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/9.png" style="zoom:67%;">
 
+<p>由题目信息：幂数加密。但出现出现了数字8，故不是二进制幂数加密法。发现只有0、1、2、4、8五个数字，故为云影密码。解密如下图：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/10.png" style="zoom:67%;">
+
+<h1 id="005-Railfence"><a href="#005-Railfence" class="headerlink" title="005 Railfence"></a>005 Railfence</h1><p>题目描述：被小鱼一连将了两军，你心里更加不服气了。两个人一起继续往前走， 一路上杂耍卖艺的很多，但是你俩毫无兴趣，直直的就冲着下一个谜题的地方去了。 到了一看，这个谜面看起来就已经有点像答案了样子了，旁边还画着一张画，是一副农家小院的 图画，上面画着一个农妇在栅栏里面喂5只小鸡，你嘿嘿一笑对着小鱼说这次可是我先找到答案了。</p>
+<p>打开附件：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/3-16331487738831.png" style="zoom:67%;">
+
+<p>由题目中所给出的提示信息：五只小鸡说明解密的key为5</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/11.png" style="zoom: 50%;">
+
+<h1 id="007混合编码"><a href="#007混合编码" class="headerlink" title="007混合编码"></a>007混合编码</h1><p>题目描述：经过了前面那么多题目的历练，耐心细致在解题当中是 必不可少的品质，刚巧你们都有，你和小鱼越来越入迷。那么走向了下一个题目，这个题目好长 好长，你知道你们只要细心细致，答案总会被你们做出来的，你们开始慢慢的尝试，慢慢的猜想 ，功夫不负有心人，在你们耐心的一步步的解答下，答案跃然纸上，你俩默契一笑，相视击掌 走向了下面的挑战。格式为cyberpeace{小写的你解出的答案}</p>
+<p>打开附件：</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/12.png"></p>
+<p>真的很长，由大小写字母、数字、=构成而且由==结尾，想到base64</p>
+<p>解密后出现：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/13.png" style="zoom:50%;">
+
+<p>新的密文由“&amp; # +数字”构成，初步判断为html实体（在html中某些字符是预留的，为了正确地显示预留字符，故在html源代码中使用字符实体html entity，它类似：&amp;entity_name；或者&amp;#entity_number；而如果需要显示小于号，就需要这样写：&amp;lt；或&amp;#60；）</p>
+<p>解码得：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/14.png" style="zoom:50%;">
+
+<p>新的密文又是由大小写字母、数字组成，看到一串字符串先判断是否为16进制（最大的字母有没有超过F），若超过则试试base64：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/15.png" style="zoom:50%;">
+
+<p>得到一串数字而且有大量的/</p>
+<p>而且每组数字都没有大于124，故判断为ascll码，于是利用python将ascll码转为字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">119</span>,<span class="number">101</span>,<span class="number">108</span>,<span class="number">99</span>,<span class="number">111</span>,<span class="number">109</span>,<span class="number">101</span>,<span class="number">116</span>,<span class="number">111</span>,<span class="number">97</span>,<span class="number">116</span>,<span class="number">116</span>,<span class="number">97</span>,<span class="number">99</span>,<span class="number">107</span>,<span class="number">97</span>,<span class="number">110</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">101</span>,<span class="number">102</span>,<span class="number">101</span>,<span class="number">110</span>,<span class="number">99</span>,<span class="number">101</span>,<span class="number">119</span>,<span class="number">111</span>,<span class="number">114</span>,<span class="number">108</span>,<span class="number">100</span>]</span><br><span class="line"><span class="string">&#x27;&#x27;</span>.join(<span class="built_in">chr</span>(i) <span class="keyword">for</span> i <span class="keyword">in</span> a)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下：<br><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/16.png" style="zoom:67%;"></p>
+<h1 id="008easy-RSA"><a href="#008easy-RSA" class="headerlink" title="008easy_RSA"></a>008easy_RSA</h1><p>题目描述：解答出来了上一个题目的你现在可是春风得意，你们走向了下一个题目所处的地方 你一看这个题目傻眼了，这明明是一个数学题啊！！！可是你的数学并不好。扭头看向小鱼，小鱼哈哈一笑 ，让你在学校里面不好好听讲现在傻眼了吧~来我来！三下五除二，小鱼便把这个题目轻轻松松的搞定了。flag格式为cyberpeace{小写的你解出的答案}</p>
+<p>打开附件：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/17.png" style="zoom: 67%;">
+
+<p>由（de）mod φ(n)=1即d×e=1mod φ(n)</p>
+<p>利用如下脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">p=gmpy2.mpz(<span class="number">473398607161</span>)</span><br><span class="line">q=gmpy2.mpz(<span class="number">4511491</span>)</span><br><span class="line">e=gmpy2.mpz(<span class="number">17</span>)</span><br><span class="line">phi_n= (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phi_n)</span><br><span class="line">print(<span class="string">&quot;d is:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> (d)</span><br></pre></td></tr></table></figure>
+
+<p>得到：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/18.png" style="zoom:67%;">
+
+<p>其中：</p>
+<p>1&gt; gmpy2用法见<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42250840/article/details/105153227">(4条消息) gmpy2—一些用法_Matrix_Ceasor的博客-CSDN博客_gmpy2</a></p>
+<p>2&gt; 希腊字母的字体变种在数学中有特定的意思，例如：φ（phi）</p>
+<h1 id="009easychallenge"><a href="#009easychallenge" class="headerlink" title="009easychallenge"></a>009easychallenge</h1><p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/hippotomons/article/details/102538110">(4条消息) CTF密码学(crypto)题目easychallenge解题过程总结_hippotomons的博客-CSDN博客_easychallenge</a></p>
+<p>题目描述：你们走到了一个冷冷清清的谜题前面，小鱼看着题目给的信息束手无策，丈二和尚摸不着头脑 ，你嘿嘿一笑，拿出来了你随身带着的笔记本电脑，噼里啪啦的敲起来了键盘，清晰的函数逻辑和流程出现在 了电脑屏幕上，你敲敲键盘，更改了几处地方，运行以后答案变出现在了电脑屏幕上。</p>
+<p>附件是一个.pyc文件（pyc是一种二进制文件。Python的程序中，是把原始程序代码放在.py文件里，而Python会在执行.py文件的时候，将.py形式的程序编译成中间式文件的.pyc文件，这么做的目的是为了加快下次执行文件的速度。所以，在运行python文件的时候，就会自动首先查看是否具有.pyc文件，如果有的话，而且.py文件的修改时间和.pyc的修改时间一样，就会读取.pyc文件，否则，Python就会读原来的.py文件。而并不是所有的.py文件在与运行的时候都会产生.pyc文件，只有在import相应的.py文件的时候，才会生成相应的.pyc文件。此外，把.py文件编译为.pyc文件，从而可以实现部分的源码隐藏，保证了安全性）</p>
+<p>第一反映是想要用一些软件尝试打开它，结果发现不行，故应该要将.pyc文件反编译回.py文件。而uncompyle6是个第三方python反编译器，可将python字节码转换回等效的python源代码，安装如下：</p>
+<p>step1：cmd进入命令行窗口，输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install uncompyle6</span><br></pre></td></tr></table></figure>
+
+<p>step2：找到需要反编译的pyc文件，在放置.pyc文件的新目录下的顶部输入框中输入cmd启动命令行窗口，然后再输入uncompyle6 .pyc &gt; .py并按下Enter键：</p>
+<p>就会在放pyc文件的目录下出现py文件了</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/19.png" style="zoom: 80%;">
+
+<p>得到的源码如下：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/20.png" style="zoom:50%;">
+
+<p>没想很多，先运行了一下，发现print报错</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/21.png" style="zoom:67%;">
+了解后发现这处错误是由于python2和python3版本不兼容造成的，加上括号后再次运行
+
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/22.png" style="zoom:67%;">
+
+<p>出现了flag = raw_input()报错，也是版本不兼容引起的</p>
+<p>去掉raw_改后运行发现是需要输入一个flag值</p>
+<p>于是看代码，它要求用户输入一个flag值，然后依次通过三个函数进行加密，再将加密后的结果与代码给定的final值进行比较，如果相等输出correct，如果不相等，输出wrong</p>
+<p>所以，出题者就是让我们根据这个加密运算过程，写出逆过程，将final值作为输入值，然后以与之前相反的顺序调用函数，最后输出的值就是flag</p>
+<p>其中三层加密具体为：</p>
+<p>第一层是每个字符先异或36再加上25（^表示转化为二进制数再异或）</p>
+<p>第二层是每个字符先加上36再异或36</p>
+<p>第三层是一个base32编码，调用base64库里的b32encode()函数进行base32运算</p>
+<p>又根据final结尾的三个”=”以及均为数字和大写字母，可以看出是base32加密</p>
+<p>开始修改原代码：</p>
+<p>把进入函数的顺序改成先进函数3再进2最后进1</p>
+<p>对每个函数内部运算进行修改（而异或运算的逆过程就是再做一次异或，所以不变）base64.b32encode()改成base64.32decode()</p>
+<p>调整语句顺序，同时也要按照代码逻辑，把i和x给相互换一下，不然会出错</p>
+<p>改完是这样的：</p>
+<img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/23.png" style="zoom: 67%;">
+
+<p>运行后，报错！！</p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/24.png"></p>
+<p>补充：</p>
+<p>encode – 字符型变量转换为数值型变量</p>
+<p>decode – 数值型变量转换为字符型变量</p>
+<p>好麻烦[哭]</p>
+<p>用不是自己写的代码看一下结果：<br><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/25.png" style="zoom:67%;"></p>
+<p><img src="/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/26.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/08/%E6%96%B0%E6%89%8B%E9%A2%98%EF%BC%88%E7%BB%AD%EF%BC%89/" data-id="ckza4yc4r000e34trh6y91eyn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/09/Crypto%E4%B9%8BRSA%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Crypto之RSA算法入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/07/%E8%A7%A3%E9%A2%98%E9%83%A8%E5%88%86%E5%B7%A5%E5%85%B7%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">解题部分工具总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/10/04/python%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA/">python错误提示</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/03/%E5%9B%9E%E8%BD%AC%E8%BD%AE%E5%8A%A0%E5%AF%86%E6%B3%95/">回转轮加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/02/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81/">栅栏密码</a>
+          </li>
+        
+          <li>
+            <a href="/2021/10/01/%E5%8D%95%E7%A0%81%E5%8A%A0%E5%AF%86%E6%B3%95%E5%92%8C%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86%E6%B3%95/">单码加密法和仿射加密法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/22/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%8Bpython%E7%9A%84%E4%B8%89%E4%B8%AA%E5%BA%93/">密码学之python的三个库</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
